@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "AvenirNext LT Pro";
+  font-family: "AvenirNext LT Pro Bold";
   src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
@@ -37,8 +37,10 @@ body {
   margin: 0;
   padding: 1rem;
   font-size: 2.5rem;
-  font-weight: lighter;
+  font-weight: 100;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
 }
 .main-nav__list {
   list-style-type: none;
@@ -53,8 +55,9 @@ body {
   padding-bottom: 2rem;
   font-size: 1.5rem;
 }
-.main-nav__item--active {
+.main-nav__item:hover {
   border-bottom: 5px solid #ffffff;
+  padding: 0;
 }
 
 .hero {
@@ -77,12 +80,20 @@ body {
   margin: 1rem;
 }
 .musician__image {
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 20rem;
   width: 100%;
 }
 .musician__heading-text {
   font-size: 2.7rem;
   margin: 1rem 0 1rem 0;
   font-weight: 700;
+}
+.musician__quote {
+  font-size: 1.6rem;
+  font-family: AvenirNext LT Pro Bold;
 }
 .musician__paragraph {
   font-size: 1.5rem;
@@ -154,8 +165,17 @@ body {
   .musician {
     padding: 1rem;
   }
+  .musician__image {
+    height: 30rem;
+  }
   .musician__paragraph {
     display: flex;
+  }
+  .musician__paragraph--padding-left {
+    padding: 0 1.5rem 0 4rem;
+  }
+  .musician__paragraph--padding-right {
+    padding: 0 4rem 0 1.5rem;
   }
   .gallery {
     background-color: #fafafa;
@@ -166,7 +186,7 @@ body {
   .gallery__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.625rem;
+    grid-column: 10rem;
   }
   .footer {
     display: grid;
@@ -186,10 +206,16 @@ body {
 @media (min-width: 1280px) {
   .main-nav__logo {
     padding-left: 8rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+  .main-nav__item {
+    font-size: 1.2rem;
   }
   .hero {
     height: 40rem;
+  }
+  .musician__image {
+    height: 35rem;
   }
   .footer {
     display: grid;
@@ -201,6 +227,6 @@ body {
   }
   .footer__logo {
     margin-right: 5rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 }/*# sourceMappingURL=bio.css.map */

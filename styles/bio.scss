@@ -1,6 +1,6 @@
-@use "partials/variables" as *;
-@use "partials/mixins" as *;
-@use "partials/fonts" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/fonts" as *;
 
 body {
   font-family: "AvenirNext LT Pro";
@@ -11,7 +11,7 @@ body {
   padding: 1.5rem;
 }
 
-// <-----THIS IS THE NAV SECTION-----> //
+// <-----THIS IS THE MOBILE SECTION-----> //
 
 .main-nav {
   background-color: $bg-color-dark-grey;
@@ -22,8 +22,10 @@ body {
     margin: 0;
     padding: 1rem;
     font-size: 2.5rem;
-    font-weight: lighter;
+    font-weight: 100;
     text-transform: uppercase;
+    text-decoration: none;
+    color: $font-color-white;
   }
 
   &__list {
@@ -40,8 +42,9 @@ body {
     padding-bottom: 2rem;
     font-size: 1.5rem;
 
-    &--active {
+    &:hover {
       border-bottom: 5px solid $font-color-white;
+      padding: 0;
     }
   }
 }
@@ -71,12 +74,20 @@ body {
   margin: 1rem;
 
   &__image {
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 20rem;
     width: 100%;
   }
   &__heading-text {
     font-size: 2.7rem;
     margin: 1rem 0 1rem 0;
     font-weight: 700;
+  }
+  &__quote {
+    font-size: 1.6rem;
+    font-family: AvenirNext LT Pro Bold;
   }
   &__paragraph {
     font-size: 1.5rem;
@@ -147,9 +158,6 @@ body {
     &__logo {
       padding: 2rem;
     }
-    &__list {
-      // padding-left: 5rem;
-    }
     &__item {
       margin-left: 5rem;
     }
@@ -165,9 +173,17 @@ body {
 
   .musician {
     padding: 1rem;
-
+    &__image {
+      height: 30rem;
+    }
     &__paragraph {
       display: flex;
+      &--padding-left {
+        padding: 0 1.5rem 0 4rem;
+      }
+      &--padding-right {
+        padding: 0 4rem 0 1.5rem;
+      }
     }
   }
 
@@ -180,7 +196,7 @@ body {
     &__container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 0.625rem;
+      grid-column: 10rem;
     }
   }
 
@@ -207,12 +223,21 @@ body {
   .main-nav {
     &__logo {
       padding-left: 8rem;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
+    }
+    &__item {
+      font-size: 1.2rem;
     }
   }
 
   .hero {
     height: 40rem;
+  }
+
+  .musician {
+    &__image {
+      height: 35rem;
+    }
   }
 
   .footer {
@@ -225,7 +250,7 @@ body {
     }
     &__logo {
       margin-right: 5rem;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
   }
 }
