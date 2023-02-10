@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "AvenirNext LT Pro";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-family: "AvenirNext LT Pro";
+  margin: 0;
+}
+
+.site-padding {
+  padding: 1.5rem;
+}
+
+.main-nav {
+  background-color: #323232;
+  color: #ffffff;
+  text-align: center;
+}
+.main-nav__logo {
+  margin: 0;
+  padding: 1rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+.main-nav__list {
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+.main-nav__item {
+  width: 100%;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+}
+.main-nav__item--active {
+  border-bottom: 5px solid #ffffff;
+}
+
+.hero {
+  background-image: url("/assets/images/hero-bio.jpg");
+  background-color: rgba(0, 0, 0, 0.486);
+  background-blend-mode: darken;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 25rem;
+}
+.hero__title {
+  margin: 1.5rem;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: lighter;
+}
+
+.musician {
+  margin: 1rem;
+}
+.musician__image {
+  width: 100%;
+}
+.musician__heading-text {
+  font-size: 2.7rem;
+  margin: 1rem 0 1rem 0;
+  font-weight: 700;
+}
+.musician__paragraph {
+  font-size: 1.5rem;
+}
+
+.gallery {
+  background-color: #fafafa;
+}
+.gallery__heading-text {
+  font-size: 2.7rem;
+  margin: 1rem 0 1rem 0;
+  font-weight: 700;
+}
+.gallery__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.gallery__image {
+  width: 100%;
+}
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+}
+.footer__filler-div {
+  display: none;
+}
+.footer__title {
+  font-size: 2.5rem;
+}
+.footer__logo {
+  margin-top: 0;
+  padding-top: 1rem;
+  margin-bottom: 1.7rem;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+.footer__logo--top {
+  display: none;
+  text-align: right;
+}
+.footer__logo--bottom {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    align-items: end;
+  }
+  .main-nav__logo {
+    padding: 2rem;
+  }
+  .main-nav__item {
+    margin-left: 5rem;
+  }
+  .hero {
+    height: 30rem;
+  }
+  .hero__title {
+    font-size: 4.5rem;
+    font-weight: bold;
+  }
+  .musician {
+    padding: 1rem;
+  }
+  .musician__paragraph {
+    display: flex;
+  }
+  .gallery {
+    background-color: #fafafa;
+  }
+  .gallery__image {
+    width: 100%;
+  }
+  .gallery__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.625rem;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.625rem;
+  }
+  .footer__logo {
+    margin-right: 2rem;
+  }
+  .footer__logo--top {
+    display: block;
+  }
+  .footer__logo--bottom {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .main-nav__logo {
+    padding-left: 8rem;
+    font-size: 1.5rem;
+  }
+  .hero {
+    height: 40rem;
+  }
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+  }
+  .footer .footer__filler-div {
+    display: block;
+  }
+  .footer__logo {
+    margin-right: 5rem;
+    font-size: 1.5rem;
+  }
+}/*# sourceMappingURL=bio.css.map */

@@ -1,0 +1,5 @@
+*.md
+*.zip
+*.map
+*.css.map
+.DS-Store
