@@ -24,23 +24,14 @@ body {
   margin: 0;
 }
 
-.site-padding {
-  padding: 1.5rem;
-}
-
 .main-nav {
   background-color: #323232;
-  color: #ffffff;
+  color: #afafaf;
   text-align: center;
 }
 .main-nav__logo {
-  margin: 0;
-  padding: 1rem;
-  font-size: 2.5rem;
-  font-weight: 100;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ffffff;
+  width: 7rem;
+  padding: 1rem 0;
 }
 .main-nav__list {
   list-style-type: none;
@@ -52,11 +43,12 @@ body {
 }
 .main-nav__item {
   width: 100%;
-  padding-bottom: 2rem;
-  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
 }
 .main-nav__item:hover {
-  border-bottom: 5px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
   padding: 0;
 }
 
@@ -67,36 +59,47 @@ body {
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 25rem;
+  height: 11.5rem;
 }
 .hero__title {
-  margin: 1.5rem;
   color: #ffffff;
-  font-size: 3rem;
-  font-weight: lighter;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding-left: 1rem;
 }
 
 .musician {
   margin: 1rem;
 }
+.musician__heading {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
 .musician__image {
   background-size: cover;
   display: flex;
   align-items: center;
-  height: 20rem;
+  height: 9.8rem;
   width: 100%;
 }
-.musician__heading-text {
-  font-size: 2.7rem;
-  margin: 1rem 0 1rem 0;
-  font-weight: 700;
-}
 .musician__quote {
-  font-size: 1.6rem;
-  font-family: AvenirNext LT Pro Bold;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+.musician__paragraph-title {
+  font-size: 0.9rem;
 }
 .musician__paragraph {
-  font-size: 1.5rem;
+  font-size: 0.8rem;
+  color: #323232;
+}
+.musician__paragraph--left {
+  padding: 0;
+}
+.musician__paragraph--right {
+  padding-right: 1rem;
 }
 
 .gallery {
@@ -150,31 +153,36 @@ body {
     align-items: end;
   }
   .main-nav__logo {
-    padding: 2rem;
+    padding: 1.4rem 0 1.4rem 2.3rem;
   }
   .main-nav__item {
-    margin-left: 5rem;
+    margin-left: 4rem;
+    padding-bottom: 1.7rem;
   }
   .hero {
-    height: 30rem;
+    height: 28.5rem;
   }
   .hero__title {
-    font-size: 4.5rem;
-    font-weight: bold;
+    font-size: 3.4rem;
+    padding-left: 2.5rem;
   }
-  .musician {
-    padding: 1rem;
+  .musician__heading {
+    font-size: 2rem;
+    margin: 2.7rem 0 2rem 1.8rem;
   }
   .musician__image {
-    height: 30rem;
+    height: 19.4rem;
+    width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   .musician__paragraph {
     display: flex;
   }
-  .musician__paragraph--padding-left {
+  .musician__paragraph--left {
     padding: 0 1.5rem 0 4rem;
   }
-  .musician__paragraph--padding-right {
+  .musician__paragraph--right {
     padding: 0 4rem 0 1.5rem;
   }
   .gallery {
@@ -206,13 +214,15 @@ body {
 @media (min-width: 1280px) {
   .main-nav__logo {
     padding-left: 8rem;
-    font-size: 1.7rem;
   }
-  .main-nav__item {
-    font-size: 1.2rem;
+  .main-nav__item--margin {
+    margin-left: 1.9rem;
   }
   .hero {
-    height: 40rem;
+    height: 39rem;
+  }
+  .hero__title {
+    padding-left: 7rem;
   }
   .musician__image {
     height: 35rem;
