@@ -76,12 +76,14 @@ body {
   margin: 0;
   margin-bottom: 0.8rem;
   font-weight: 700;
+  color: #323232;
+}
+.musician__container-image {
+  height: 45.5vw;
+  margin-bottom: 1.5rem;
 }
 .musician__image {
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  height: 9.8rem;
+  height: 100%;
   width: 100%;
 }
 .musician__quote {
@@ -96,10 +98,10 @@ body {
   color: #323232;
 }
 .musician__paragraph--left {
-  padding: 0;
+  margin-right: 1rem;
 }
 .musician__paragraph--right {
-  padding-right: 1rem;
+  margin-right: 0;
 }
 
 .gallery {
@@ -170,20 +172,26 @@ body {
     font-size: 2rem;
     margin: 2.7rem 0 2rem 1.8rem;
   }
-  .musician__image {
-    height: 19.4rem;
-    width: 36rem;
-    margin-left: auto;
-    margin-right: auto;
+  .musician__container-image {
+    height: 39.5vw;
+    margin: 0 5rem 2rem 5rem;
+  }
+  .musician__quote {
+    margin: 0 5rem 0.8rem 5rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+  .musician__name {
+    font-size: 1rem;
+  }
+  .musician__paragraph-title {
+    margin: 3rem 5rem 0.5rem 5rem;
+    font-size: 1.5rem;
   }
   .musician__paragraph {
     display: flex;
-  }
-  .musician__paragraph--left {
-    padding: 0 1.5rem 0 4rem;
-  }
-  .musician__paragraph--right {
-    padding: 0 4rem 0 1.5rem;
+    margin: 0 5rem 1rem 5rem;
+    line-height: 1.4rem;
   }
   .gallery {
     background-color: #fafafa;
@@ -224,8 +232,23 @@ body {
   .hero__title {
     padding-left: 7rem;
   }
-  .musician__image {
-    height: 35rem;
+  .musician__heading {
+    margin-left: 7rem;
+  }
+  .musician__container-image {
+    height: 31.25vw;
+    margin: 0 12rem 2rem 12rem;
+  }
+  .musician__quote {
+    margin: 0 12rem 1rem 12rem;
+    padding-right: 10.5rem;
+  }
+  .musician__paragraph-title {
+    margin: 3rem 12rem 0.5rem 12rem;
+  }
+  .musician__paragraph {
+    font-size: 0.9rem;
+    margin: 0 12rem 1rem 12rem;
   }
   .footer {
     display: grid;
