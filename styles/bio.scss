@@ -63,7 +63,7 @@ body {
 // <-----THIS IS THE MUSICIANS SECTION-----> //
 
 .musician {
-  margin: 1rem;
+  padding: 1rem;
 
   &__heading {
     font-size: 1.5rem;
@@ -103,20 +103,29 @@ body {
 
 .gallery {
   background-color: $bg-color-light-grey;
+  padding: 1rem;
 
-  &__heading-text {
-    font-size: 2.7rem;
-    margin: 1rem 0 1rem 0;
-    font-weight: 700;
+  &__heading {
+    font-size: 1.4rem;
+    margin: 0;
+    padding-bottom: 1rem;
+    color: $font-color-dark-grey;
   }
-
   &__container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 1rem;
   }
   &__image {
+    height: 100%;
     width: 100%;
+    // margin-bottom: 1rem;
+    filter: grayscale(100%);
+  }
+  &__image:hover {
+    filter: grayscale(0%);
+    box-shadow: 2px 2px 20px;
   }
 }
 
@@ -178,9 +187,10 @@ body {
   }
 
   .musician {
+    padding: 2rem;
     &__heading {
       font-size: 2rem;
-      margin: 2.7rem 0 2rem 1.8rem;
+      margin: 2.7rem 0 2rem 0;
     }
     &__container-image {
       height: 39.5vw;
@@ -207,15 +217,21 @@ body {
   }
 
   .gallery {
-    background-color: $bg-color-light-grey;
-
-    &__image {
-      width: 100%;
+    padding: 2rem;
+    &__heading {
+      font-size: 2.25rem;
+      margin: 0 0 1.5rem 0;
+      padding-top: 1rem;
     }
     &__container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-column: 10rem;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      // padding: 0 1.5rem 0 1.5rem;
+    }
+    &__image {
+      height: 16.4vw;
+      width: 31.5%;
     }
   }
 
@@ -275,6 +291,22 @@ body {
     &__paragraph {
       font-size: 0.9rem;
       margin: 0 12rem 1rem 12rem;
+    }
+  }
+
+  .gallery {
+    &__heading {
+      font-size: 2.25rem;
+      margin: 0 7rem 0 7rem;
+    }
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin: 0 7rem 0 7rem;
+    }
+    &__image {
+      margin-bottom: 0.5rem;
     }
   }
 
