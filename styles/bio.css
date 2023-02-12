@@ -133,29 +133,39 @@ body {
 .footer {
   background-color: #323232;
   color: #ffffff;
-  padding-bottom: 1rem;
-  padding-top: 1.5rem;
+  padding: 1rem;
 }
-.footer__filler-div {
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+.footer__top {
   display: none;
+}
+.footer__bottom {
+  display: block;
 }
 .footer__title {
-  font-size: 2.5rem;
+  margin: 0.3rem 0rem 1rem 0;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
-.footer__logo {
-  margin-top: 0;
-  padding-top: 1rem;
-  margin-bottom: 1.7rem;
-  font-size: 2.5rem;
-  font-weight: lighter;
-  text-transform: uppercase;
+.footer__name {
+  font-size: 0.8rem;
+  font-weight: normal;
+  line-height: 1.2rem;
 }
-.footer__logo--top {
-  display: none;
-  text-align: right;
+.footer__location {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
 }
-.footer__logo--bottom {
-  display: block;
+.footer__email {
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+.footer__copyright {
+  font-size: 0.67rem;
 }
 
 @media (min-width: 768px) {
@@ -223,17 +233,39 @@ body {
     width: 31.5%;
   }
   .footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.625rem;
+    padding: 2rem;
+  }
+  .footer__title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .footer__row-one {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+  .footer__row-one--logo {
+    flex-grow: 1;
+  }
+  .footer__row-one--column {
+    width: 28%;
   }
   .footer__logo {
-    margin-right: 2rem;
+    float: right;
   }
-  .footer__logo--top {
+  .footer__row-two {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .footer__row-two--column {
+    width: 28%;
+  }
+  .footer__top {
     display: block;
   }
-  .footer__logo--bottom {
+  .footer__bottom {
     display: none;
   }
 }
@@ -281,16 +313,13 @@ body {
   .gallery__image {
     margin-bottom: 0.5rem;
   }
-  .footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.625rem;
+  .footer__row-one {
+    margin: 0 7rem 0 7rem;
   }
-  .footer .footer__filler-div {
-    display: block;
+  .footer__row-two {
+    margin: 0 7rem 0 7rem;
   }
-  .footer__logo {
-    margin-right: 5rem;
-    font-size: 1.7rem;
+  .footer__row-three {
+    margin: 0 7rem 0 7rem;
   }
 }/*# sourceMappingURL=bio.css.map */

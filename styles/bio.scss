@@ -134,31 +134,39 @@ body {
 .footer {
   background-color: $bg-color-dark-grey;
   color: $font-color-white;
-  padding-bottom: 1rem;
-  padding-top: 1.5rem;
-
-  &__filler-div {
+  padding: 1rem;
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  &__top {
     display: none;
   }
-  &__title {
-    font-size: 2.5rem;
+  &__bottom {
+    display: block;
   }
 
-  &__logo {
-    margin-top: 0;
-    padding-top: 1rem;
-    margin-bottom: 1.7rem;
-    font-size: 2.5rem;
-    font-weight: lighter;
-    text-transform: uppercase;
-
-    &--top {
-      display: none;
-      text-align: right;
-    }
-    &--bottom {
-      display: block;
-    }
+  &__title {
+    margin: 0.3rem 0rem 1rem 0;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  &__name {
+    font-size: 0.8rem;
+    font-weight: normal;
+    line-height: 1.2rem;
+  }
+  &__location {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  &__email {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  &__copyright {
+    font-size: 0.67rem;
   }
 }
 
@@ -236,18 +244,39 @@ body {
   }
 
   .footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.625rem;
-
+    padding: 2rem;
+    &__title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    &__row-one {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      align-items: center;
+      &--logo {
+        flex-grow: 1;
+      }
+      &--column {
+        width: 28%;
+      }
+    }
     &__logo {
-      margin-right: 2rem;
-      &--top {
-        display: block;
+      float: right;
+    }
+    &__row-two {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      &--column {
+        width: 28%;
       }
-      &--bottom {
-        display: none;
-      }
+    }
+    &__top {
+      display: block;
+    }
+    &__bottom {
+      display: none;
     }
   }
 }
@@ -309,18 +338,15 @@ body {
       margin-bottom: 0.5rem;
     }
   }
-
   .footer {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 0.625rem;
-
-    .footer__filler-div {
-      display: block;
+    &__row-one {
+      margin: 0 7rem 0 7rem;
     }
-    &__logo {
-      margin-right: 5rem;
-      font-size: 1.7rem;
+    &__row-two {
+      margin: 0 7rem 0 7rem;
+    }
+    &__row-three {
+      margin: 0 7rem 0 7rem;
     }
   }
 }
