@@ -84,6 +84,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.4rem;
     color: $font-color-black;
+    font-weight: bold;
   }
   &__name {
     color: $font-color-dark-grey;
@@ -125,12 +126,11 @@ body {
   &__image {
     height: 100%;
     width: 100%;
-    // margin-bottom: 1rem;
     filter: grayscale(100%);
   }
   &__image:hover {
     filter: grayscale(0%);
-    box-shadow: 2px 2px 20px;
+    box-shadow: 0.15rem 0.15rem 0.9rem;
   }
 }
 
@@ -173,7 +173,7 @@ body {
     color: $font-color-mercury;
   }
   &__copyright {
-    font-size: 0.67rem;
+    font-size: 0.75rem;
     color: $font-color-mercury;
   }
 }
@@ -256,6 +256,21 @@ body {
     &__title {
       font-size: 2rem;
       font-weight: bold;
+    }
+    &__name {
+      font-size: 1rem;
+      padding-bottom: 0.8rem;
+    }
+    &__location {
+      font-size: 0.95rem;
+      padding-bottom: 0.8rem;
+    }
+    &__email {
+      font-size: 0.95rem;
+      padding-bottom: 1rem;
+    }
+    &__copyright {
+      font-size: 0.85rem;
     }
     &__row-one {
       display: flex;

@@ -90,6 +90,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.4rem;
   color: #000000;
+  font-weight: bold;
 }
 .musician__name {
   color: #323232;
@@ -132,7 +133,7 @@ body {
 }
 .gallery__image:hover {
   filter: grayscale(0%);
-  box-shadow: 2px 2px 20px;
+  box-shadow: 0.15rem 0.15rem 0.9rem;
 }
 
 .footer {
@@ -172,7 +173,7 @@ body {
   color: #e1e1e1;
 }
 .footer__copyright {
-  font-size: 0.67rem;
+  font-size: 0.75rem;
   color: #e1e1e1;
 }
 
@@ -246,6 +247,21 @@ body {
   .footer__title {
     font-size: 2rem;
     font-weight: bold;
+  }
+  .footer__name {
+    font-size: 1rem;
+    padding-bottom: 0.8rem;
+  }
+  .footer__location {
+    font-size: 0.95rem;
+    padding-bottom: 0.8rem;
+  }
+  .footer__email {
+    font-size: 0.95rem;
+    padding-bottom: 1rem;
+  }
+  .footer__copyright {
+    font-size: 0.85rem;
   }
   .footer__row-one {
     display: flex;
