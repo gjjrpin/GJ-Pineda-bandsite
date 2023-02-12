@@ -1,5 +1,4 @@
 @use "./partials/variables" as *;
-@use "./partials/mixins" as *;
 @use "./partials/fonts" as *;
 
 body {
@@ -171,7 +170,9 @@ body {
     font-size: 0.8rem;
     line-height: 1.2rem;
     color: $font-color-mercury;
+    text-decoration: none;
   }
+
   &__copyright {
     font-size: 0.75rem;
     color: $font-color-mercury;
