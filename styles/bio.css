@@ -26,7 +26,7 @@ body {
 
 .main-nav {
   background-color: #323232;
-  color: #afafaf;
+  color: #e1e1e1;
   text-align: center;
 }
 .main-nav__logo {
@@ -89,9 +89,14 @@ body {
 .musician__quote {
   font-size: 0.9rem;
   line-height: 1.4rem;
+  color: #000000;
+}
+.musician__name {
+  color: #323232;
 }
 .musician__paragraph-title {
   font-size: 0.9rem;
+  color: #000000;
 }
 .musician__paragraph {
   font-size: 0.8rem;
@@ -159,13 +164,16 @@ body {
 .footer__location {
   font-size: 0.8rem;
   line-height: 1.2rem;
+  color: #e1e1e1;
 }
 .footer__email {
   font-size: 0.8rem;
   line-height: 1.2rem;
+  color: #e1e1e1;
 }
 .footer__copyright {
   font-size: 0.67rem;
+  color: #e1e1e1;
 }
 
 @media (min-width: 768px) {

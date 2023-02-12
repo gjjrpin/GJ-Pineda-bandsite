@@ -11,7 +11,7 @@ body {
 
 .main-nav {
   background-color: $bg-color-dark-grey;
-  color: $font-color-silver;
+  color: $font-color-mercury;
   text-align: center;
 
   &__logo {
@@ -83,9 +83,14 @@ body {
   &__quote {
     font-size: 0.9rem;
     line-height: 1.4rem;
+    color: $font-color-black;
+  }
+  &__name {
+    color: $font-color-dark-grey;
   }
   &__paragraph-title {
     font-size: 0.9rem;
+    color: $font-color-black;
   }
   &__paragraph {
     font-size: 0.8rem;
@@ -160,13 +165,16 @@ body {
   &__location {
     font-size: 0.8rem;
     line-height: 1.2rem;
+    color: $font-color-mercury;
   }
   &__email {
     font-size: 0.8rem;
     line-height: 1.2rem;
+    color: $font-color-mercury;
   }
   &__copyright {
     font-size: 0.67rem;
+    color: $font-color-mercury;
   }
 }
 
