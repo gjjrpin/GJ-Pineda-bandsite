@@ -35,7 +35,11 @@ body {
     &:hover {
       border-bottom: 2px solid $font-color-white;
       color: $font-color-white;
-      padding: 0;
+    }
+
+    &--active {
+      border-bottom: 2px solid $font-color-white;
+      color: $font-color-white;
     }
   }
 }
@@ -273,27 +277,31 @@ body {
     &__copyright {
       font-size: 0.85rem;
     }
-    &__row-one {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      align-items: center;
-      &--logo {
-        flex-grow: 1;
-      }
-      &--column {
-        width: 28%;
+    &__row {
+      &--one {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+        &--logo {
+          flex-grow: 1;
+        }
+        &--column {
+          width: 28%;
+        }
       }
     }
     &__logo {
       float: right;
     }
-    &__row-two {
-      display: flex;
-      flex-direction: row;
-      gap: 2rem;
-      &--column {
-        width: 28%;
+    &__row {
+      &--two {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        &--column {
+          width: 28%;
+        }
       }
     }
     &__top {
@@ -363,14 +371,16 @@ body {
     }
   }
   .footer {
-    &__row-one {
-      margin: 0 7rem 0 7rem;
-    }
-    &__row-two {
-      margin: 0 7rem 0 7rem;
-    }
-    &__row-three {
-      margin: 0 7rem 0 7rem;
+    &__row {
+      &--one {
+        margin: 0 7rem 0 7rem;
+      }
+      &--two {
+        margin: 0 7rem 0 7rem;
+      }
+      &--three {
+        margin: 0 7rem 0 7rem;
+      }
     }
   }
 }

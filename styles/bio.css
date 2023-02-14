@@ -49,7 +49,10 @@ body {
 .main-nav__item:hover {
   border-bottom: 2px solid #ffffff;
   color: #ffffff;
-  padding: 0;
+}
+.main-nav__item--active {
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
 }
 
 .hero {
@@ -264,27 +267,27 @@ body {
   .footer__copyright {
     font-size: 0.85rem;
   }
-  .footer__row-one {
+  .footer__row--one {
     display: flex;
     flex-direction: row;
     gap: 2rem;
     align-items: center;
   }
-  .footer__row-one--logo {
+  .footer__row--one--logo {
     flex-grow: 1;
   }
-  .footer__row-one--column {
+  .footer__row--one--column {
     width: 28%;
   }
   .footer__logo {
     float: right;
   }
-  .footer__row-two {
+  .footer__row--two {
     display: flex;
     flex-direction: row;
     gap: 2rem;
   }
-  .footer__row-two--column {
+  .footer__row--two--column {
     width: 28%;
   }
   .footer__top {
@@ -338,13 +341,13 @@ body {
   .gallery__image {
     margin-bottom: 0.5rem;
   }
-  .footer__row-one {
+  .footer__row--one {
     margin: 0 7rem 0 7rem;
   }
-  .footer__row-two {
+  .footer__row--two {
     margin: 0 7rem 0 7rem;
   }
-  .footer__row-three {
+  .footer__row--three {
     margin: 0 7rem 0 7rem;
   }
 }/*# sourceMappingURL=bio.css.map */
