@@ -7,7 +7,6 @@ body {
 }
 
 // <-----THIS IS THE MOBILE SECTION-----> //
-
 .main-nav {
   background-color: $bg-color-dark-grey;
   color: $font-color-mercury;
@@ -37,7 +36,6 @@ body {
       border-bottom: 0.2rem solid $font-color-white;
       color: $font-color-white;
     }
-
     &--active {
       border-bottom: 0.2rem solid $font-color-white;
       color: $font-color-white;
@@ -48,13 +46,20 @@ body {
 // <-----THIS IS THE HERO SECTION-----> //
 
 .hero {
-  background-image: url("../assets/images/hero-bio.jpg");
+  background-image: url("../assets/images/hero-shows.jpg");
   background-color: rgba(0, 0, 0, 0.486);
   background-blend-mode: darken;
   background-size: cover;
   display: flex;
-  align-items: center;
-  height: 11.5rem;
+  flex-direction: column;
+  height: 17rem;
+
+  &__album {
+    font-size: 1.45rem;
+    color: $font-color-white;
+    padding-left: 1rem;
+    margin: 2rem 0 0 0;
+  }
 
   &__title {
     color: $font-color-white;
@@ -62,116 +67,19 @@ body {
     font-weight: bold;
     padding-left: 1rem;
   }
-}
-
-// <-----THIS IS THE MUSICIANS SECTION-----> //
-
-.musician {
-  padding: 1rem;
-
-  &__heading {
-    font-size: 1.5rem;
-    margin: 0;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-    color: $font-color-dark-grey;
+  &__music-container {
   }
-  &__container-image {
-    height: 45.5vw;
-    margin-bottom: 1.5rem;
-  }
-  &__image {
-    height: 100%;
-    width: 100%;
-  }
-  &__quote {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
-    color: $font-color-black;
-    font-weight: bold;
-  }
-  &__name {
-    color: $font-color-dark-grey;
-  }
-  &__paragraph-title {
-    font-size: 0.9rem;
-    color: $font-color-black;
-  }
-  &__paragraph {
-    font-size: 0.8rem;
-    color: $font-color-dark-grey;
-    &--left {
-      margin-right: 1rem;
-    }
-    &--right {
-      margin-right: 0;
-    }
+  &__music-player {
+    height: 6rem;
+    width: 18rem;
+    padding-left: 1rem;
   }
 }
 
-// <-----THIS IS PHOTO GALLERY SECTION-----> //
+// <-----THIS IS THE SHOWS SECTION-----> //
 
-.gallery {
-  background-color: $bg-color-light-grey;
-  padding: 1rem;
-
-  &__heading {
-    font-size: 1.4rem;
-    margin: 0;
-    padding-bottom: 1rem;
-    color: $font-color-dark-grey;
-  }
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  &__image {
-    height: 100%;
-    width: 100%;
-    filter: grayscale(100%);
-  }
-  &__image:hover {
-    filter: grayscale(0%);
-    box-shadow: 0.15rem 0.15rem 0.9rem;
-  }
-}
-// <-----THIS IS THE COMMENT SECTION----> //
-.comment {
-  background-color: $bg-color-white;
-  margin: 0 1rem 0 1rem;
-  &__title {
-    font-size: 1.3rem;
-  }
-  &__name-container {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 0.15rem solid $bg-color-mercury;
-  }
-  &__image {
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-  }
-  &__input-container {
-    display: flex;
-    flex-direction: column;
-    --text {
-      color: $font-color-silver;
-      font-size: 0.75rem;
-      line-height: 1.25rem;
-      margin: 0 0 0.5rem 0;
-    }
-  }
-  &__text-container {
-    --bottom {
-    }
-  }
-  &__button {
-  }
-  &__default-comment {
-  }
+.ticket {
+  margin: 1rem;
 }
 
 // <-----THIS IS THE FOOTER SECTION-----> //
@@ -180,6 +88,8 @@ body {
   background-color: $bg-color-dark-grey;
   color: $font-color-white;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
   &__icons {
     display: flex;
     flex-direction: row;
@@ -220,6 +130,8 @@ body {
   }
 }
 
+// -------------------------------------------------------------------------//
+
 // <-----THIS IS THE MEDIA SECTION-----> //
 // <-------------TABLET----------------> //
 
@@ -237,62 +149,20 @@ body {
   }
 
   .hero {
-    height: 28.5rem;
+    height: 30.5rem;
     &__title {
       font-size: 3.4rem;
       padding-left: 2.5rem;
     }
-  }
-
-  .musician {
-    padding: 2rem;
-    &__heading {
-      font-size: 2rem;
-      margin: 2.7rem 0 2rem 0;
+    &__album {
+      padding-left: 2.5rem;
     }
-    &__container-image {
-      height: 39.5vw;
-      margin: 0 5rem 2rem 5rem;
-    }
-    &__quote {
-      margin: 0 5rem 0.8rem 5rem;
-      font-size: 1.4rem;
-      line-height: 1.8rem;
-    }
-    &__name {
-      font-size: 1rem;
-    }
-    &__paragraph-title {
-      margin: 3rem 5rem 0.5rem 5rem;
-      font-size: 1.5rem;
-    }
-
-    &__paragraph {
-      display: flex;
-      margin: 0 5rem 1rem 5rem;
-      line-height: 1.4rem;
+    &__music-player {
+      padding-left: 2.5rem;
+      height: 8.8rem;
+      width: 26rem;
     }
   }
-
-  .gallery {
-    padding: 2rem;
-    &__heading {
-      font-size: 2.25rem;
-      margin: 0 0 1.5rem 0;
-      padding-top: 1rem;
-    }
-    &__container {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      // padding: 0 1.5rem 0 1.5rem;
-    }
-    &__image {
-      height: 16.4vw;
-      width: 31.5%;
-    }
-  }
-
   .footer {
     padding: 2rem;
     &__title {
@@ -361,6 +231,10 @@ body {
       &--margin {
         margin-left: 1.9rem;
       }
+      &--active {
+        border-bottom: 0.15rem solid $font-color-white;
+        color: $font-color-white;
+      }
     }
   }
 
@@ -369,44 +243,14 @@ body {
     &__title {
       padding-left: 7rem;
     }
-  }
-
-  .musician {
-    &__heading {
-      margin-left: 7rem;
+    &__album {
+      padding-left: 7rem;
     }
-    &__container-image {
-      height: 31.25vw;
-      margin: 0 12rem 2rem 12rem;
-    }
-    &__quote {
-      margin: 0 12rem 1rem 12rem;
-      padding-right: 10.5rem;
-    }
-    &__paragraph-title {
-      margin: 3rem 12rem 0.5rem 12rem;
-    }
-    &__paragraph {
-      font-size: 0.9rem;
-      margin: 0 12rem 1rem 12rem;
+    &__music-player {
+      padding-left: 7rem;
     }
   }
 
-  .gallery {
-    &__heading {
-      font-size: 2.25rem;
-      margin: 0 7rem 0 7rem;
-    }
-    &__container {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      margin: 0 7rem 0 7rem;
-    }
-    &__image {
-      margin-bottom: 0.5rem;
-    }
-  }
   .footer {
     &__row {
       &--one {

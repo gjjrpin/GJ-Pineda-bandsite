@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bandsite</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <title>Bandsite - Biography</title>
   </head>
   <body>
     <!-- THIS IS THE NAV BAR -->
@@ -18,8 +18,14 @@
             class="main-nav__logo"
         /></a>
         <ul class="main-nav__list">
-          <li class="main-nav__item main-nav__item--active">Biography</li>
-          <li class="main-nav__item main-nav__item--margin">Shows</li>
+          <a href="./index.html" class="main-nav__item main-nav__item--active"
+            ><li>Biography</li></a
+          >
+          <a
+            href="./pages/shows.html"
+            class="main-nav__item main-nav__item--margin"
+            ><li>Shows</li></a
+          >
         </ul>
       </nav>
     </header>
@@ -131,6 +137,44 @@
         </div>
       </section>
       <!-- THIS IS THE PHOTO GALLERY SECTION -->
+      <!-- THIS IS THE COMMENT SECTION -->
+      <div class="comment">
+        <h2 class="comment__title">Join the Conversation</h2>
+
+        <img
+          class="comment__image"
+          src="./assets/images/Mohan-muruge.jpg"
+          alt=""
+        />
+
+        <div class="comment__name-container">
+          <form class="comment__input-container">
+            <h3 class="comment__input-container--text">NAME</h3>
+
+            <textarea
+              class="comment__text-container comment__text-container--top"
+              name="name"
+              rows="1"
+              cols="30"
+              placeholder="Enter your name"
+            ></textarea>
+
+            <h3 class="comment__input-container--text">COMMENT</h3>
+
+            <textarea
+              class="comment__text-container comment__text-container--bottom"
+              name="comment"
+              rows="4"
+              cols="30"
+              placeholder="Add a new comment"
+            ></textarea>
+
+            <button class="comment__button">COMMENT</button>
+          </form>
+        </div>
+        <div class="comment__default-comment"></div>
+      </div>
+      <!-- THIS IS THE COMMENT SECTION -->
     </main>
 
     <!-- THIS IS THE FOOTER -->
@@ -202,5 +246,6 @@
       </div>
     </footer>
     <!-- THIS IS THE FOOTER -->
+    <script src="./scripts/comment_section.js"></script>
   </body>
 </html>
