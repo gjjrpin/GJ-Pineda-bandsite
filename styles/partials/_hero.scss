@@ -19,7 +19,7 @@
 
 @include tablet {
   .hero {
-    height: 28.5rem;
+    height: 34rem;
     &__title {
       font-size: 3.4rem;
       padding-left: 2.5rem;
@@ -31,7 +31,7 @@
 
 @include desktop {
   .hero {
-    height: 39rem;
+    height: 44rem;
     &__title {
       padding-left: 7rem;
     }

@@ -101,7 +101,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .hero {
-    height: 28.5rem;
+    height: 34rem;
   }
   .hero__title {
     font-size: 3.4rem;
@@ -110,7 +110,7 @@ body {
 }
 @media only screen and (min-width: 1280px) {
   .hero {
-    height: 39rem;
+    height: 44rem;
   }
   .hero__title {
     padding-left: 7rem;

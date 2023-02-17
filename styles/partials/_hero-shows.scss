@@ -8,7 +8,7 @@
   height: 17rem;
 
   &__album {
-    font-size: 1.45rem;
+    font-size: 0.9rem;
     color: $font-color-white;
     padding-left: 1rem;
     margin: 2rem 0 0 0;
@@ -21,7 +21,7 @@
     padding-left: 1rem;
   }
   &__music-container {
-    margin: 1rem;
+    margin: 0;
   }
   &__music-player {
     height: 6rem;
@@ -34,10 +34,15 @@
 
 @include tablet {
   .hero {
-    height: 30.5rem;
+    height: 34rem;
+    &__album {
+      margin-top: 3.7rem;
+      font-size: 1.6rem;
+    }
     &__title {
-      font-size: 3.4rem;
+      font-size: 4rem;
       padding-left: 2.5rem;
+      margin-top: 1rem;
     }
     &__album {
       padding-left: 2.5rem;
@@ -54,12 +59,26 @@
 
 @include desktop {
   .hero {
-    height: 39rem;
+    height: 44rem;
     &__title {
       padding-left: 7rem;
     }
     &__album {
+      font-size: 1.8rem;
       padding-left: 7rem;
+      margin-top: 0;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding: 1rem;
+    }
+    &__music-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
     &__music-player {
       padding-left: 7rem;
