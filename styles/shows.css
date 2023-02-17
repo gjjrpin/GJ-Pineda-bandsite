@@ -56,6 +56,27 @@ body {
   color: #ffffff;
 }
 
+@media only screen and (min-width: 768px) {
+  .main-nav {
+    display: flex;
+    align-items: end;
+  }
+  .main-nav__logo {
+    padding: 1.4rem 0 1.4rem 2.3rem;
+  }
+  .main-nav__item {
+    margin-left: 4rem;
+    padding-bottom: 1.7rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .main-nav__logo {
+    padding-left: 8rem;
+  }
+  .main-nav__item--margin {
+    margin-left: 1.9rem;
+  }
+}
 .hero {
   background-image: url("../assets/images/hero-shows.jpg");
   background-color: rgba(0, 0, 0, 0.486);
@@ -77,12 +98,46 @@ body {
   font-weight: bold;
   padding-left: 1rem;
 }
+.hero__music-container {
+  margin: 1rem;
+}
 .hero__music-player {
   height: 6rem;
   width: 18rem;
   padding-left: 1rem;
 }
 
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 30.5rem;
+  }
+  .hero__title {
+    font-size: 3.4rem;
+    padding-left: 2.5rem;
+  }
+  .hero__album {
+    padding-left: 2.5rem;
+  }
+  .hero__music-player {
+    padding-left: 2.5rem;
+    height: 8.8rem;
+    width: 26rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero {
+    height: 39rem;
+  }
+  .hero__title {
+    padding-left: 7rem;
+  }
+  .hero__album {
+    padding-left: 7rem;
+  }
+  .hero__music-player {
+    padding-left: 7rem;
+  }
+}
 .ticket {
   margin: 1rem;
 }
@@ -91,8 +146,6 @@ body {
   background-color: #323232;
   color: #ffffff;
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
 }
 .footer__icons {
   display: flex;
@@ -131,33 +184,7 @@ body {
   color: #e1e1e1;
 }
 
-@media (min-width: 768px) {
-  .main-nav {
-    display: flex;
-    align-items: end;
-  }
-  .main-nav__logo {
-    padding: 1.4rem 0 1.4rem 2.3rem;
-  }
-  .main-nav__item {
-    margin-left: 4rem;
-    padding-bottom: 1.7rem;
-  }
-  .hero {
-    height: 30.5rem;
-  }
-  .hero__title {
-    font-size: 3.4rem;
-    padding-left: 2.5rem;
-  }
-  .hero__album {
-    padding-left: 2.5rem;
-  }
-  .hero__music-player {
-    padding-left: 2.5rem;
-    height: 8.8rem;
-    width: 26rem;
-  }
+@media only screen and (min-width: 768px) {
   .footer {
     padding: 2rem;
   }
@@ -210,29 +237,7 @@ body {
     display: none;
   }
 }
-@media (min-width: 1280px) {
-  .main-nav__logo {
-    padding-left: 8rem;
-  }
-  .main-nav__item--margin {
-    margin-left: 1.9rem;
-  }
-  .main-nav__item--active {
-    border-bottom: 0.15rem solid #ffffff;
-    color: #ffffff;
-  }
-  .hero {
-    height: 39rem;
-  }
-  .hero__title {
-    padding-left: 7rem;
-  }
-  .hero__album {
-    padding-left: 7rem;
-  }
-  .hero__music-player {
-    padding-left: 7rem;
-  }
+@media only screen and (min-width: 1280px) {
   .footer__row--one {
     margin: 0 7rem 0 7rem;
   }

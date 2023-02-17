@@ -1,0 +1,68 @@
+.hero {
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-color: rgba(0, 0, 0, 0.486);
+  background-blend-mode: darken;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 17rem;
+
+  &__album {
+    font-size: 1.45rem;
+    color: $font-color-white;
+    padding-left: 1rem;
+    margin: 2rem 0 0 0;
+  }
+
+  &__title {
+    color: $font-color-white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-left: 1rem;
+  }
+  &__music-container {
+    margin: 1rem;
+  }
+  &__music-player {
+    height: 6rem;
+    width: 18rem;
+    padding-left: 1rem;
+  }
+}
+
+// <-------------TABLET----------------> //
+
+@include tablet {
+  .hero {
+    height: 30.5rem;
+    &__title {
+      font-size: 3.4rem;
+      padding-left: 2.5rem;
+    }
+    &__album {
+      padding-left: 2.5rem;
+    }
+    &__music-player {
+      padding-left: 2.5rem;
+      height: 8.8rem;
+      width: 26rem;
+    }
+  }
+}
+
+// <-------------DESKTOP----------------> //
+
+@include desktop {
+  .hero {
+    height: 39rem;
+    &__title {
+      padding-left: 7rem;
+    }
+    &__album {
+      padding-left: 7rem;
+    }
+    &__music-player {
+      padding-left: 7rem;
+    }
+  }
+}
