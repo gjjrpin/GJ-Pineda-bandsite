@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/bio.css" />
+    <link rel="stylesheet" href="./styles/partials/global.css" />
     <title>Bandsite - Biography</title>
   </head>
   <body>
@@ -18,14 +19,18 @@
             class="main-nav__logo"
         /></a>
         <ul class="main-nav__list">
-          <a href="./index.html" class="main-nav__item main-nav__item--active"
-            ><li>Biography</li></a
-          >
-          <a
-            href="./pages/shows.html"
-            class="main-nav__item main-nav__item--margin"
-            ><li>Shows</li></a
-          >
+          <li>
+            <a href="./index.html" class="main-nav__item main-nav__item--active"
+              >Biography</a
+            >
+          </li>
+          <li>
+            <a
+              href="./pages/shows.html"
+              class="main-nav__item main-nav__item--margin"
+              >Shows</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -173,6 +178,9 @@
           </form>
         </div>
         <div class="comment__default-comment"></div>
+        <!-- THESE ARE THE COMMENTS -->
+        <section id="comment"></section>
+        <!-- THESE ARE THE COMMENTS -->
       </div>
       <!-- THIS IS THE COMMENT SECTION -->
     </main>
@@ -246,6 +254,6 @@
       </div>
     </footer>
     <!-- THIS IS THE FOOTER -->
-    <script src="./scripts/comment_section.js"></script>
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>

@@ -81,8 +81,7 @@ for (let index = 0; index < cards.length; index++) {
 
 // *****This entire forloop ends when index is NOT less than cards.length.*****
 
-
-// NOTES
+// ADDITIONAL NOTES
 
 // // const variable called tickets_element and we're setting this variable into
 // // HTML with the ID #tickets.
