@@ -19,18 +19,25 @@
     width: 100%;
     padding-bottom: 1rem;
     font-size: 0.9rem;
-    text-decoration: none;
     list-style-type: none;
-    color: $font-color-mercury;
+
+    a {
+      text-decoration: none;
+      color: $font-color-mercury;
+    }
 
     &:hover {
       border-bottom: 0.2rem solid $font-color-white;
-      color: $font-color-white;
+      a {
+        color: $font-color-white;
+      }
     }
 
     &--active {
       border-bottom: 0.2rem solid $font-color-white;
-      color: $font-color-white;
+      a {
+        color: $font-color-white;
+      }
     }
   }
 }

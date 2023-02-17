@@ -43,16 +43,22 @@ body {
   width: 100%;
   padding-bottom: 1rem;
   font-size: 0.9rem;
-  text-decoration: none;
   list-style-type: none;
+}
+.main-nav__item a {
+  text-decoration: none;
   color: #e1e1e1;
 }
 .main-nav__item:hover {
   border-bottom: 0.2rem solid #ffffff;
+}
+.main-nav__item:hover a {
   color: #ffffff;
 }
 .main-nav__item--active {
   border-bottom: 0.2rem solid #ffffff;
+}
+.main-nav__item--active a {
   color: #ffffff;
 }
 
