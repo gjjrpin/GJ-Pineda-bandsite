@@ -7,7 +7,88 @@ body {
   margin: 0;
 }
 
-@import "./partials/main-nav";
-@import "./partials/hero-shows";
-@import "./partials/ticket";
-@import "./partials/footer";
+// <-------------HERO----------------> //
+
+.hero {
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-color: rgba(0, 0, 0, 0.486);
+  background-blend-mode: darken;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  height: 17rem;
+  @include tablet {
+    height: 34rem;
+  }
+  @include desktop {
+    height: 44rem;
+  }
+
+  &__album {
+    font-size: 0.9rem;
+    color: $font-color-white;
+    padding-left: 1rem;
+    margin: 2rem 0 0 0;
+    @include tablet {
+      padding-left: 2.5rem;
+      margin-top: 3.7rem;
+      font-size: 1.6rem;
+    }
+    @include desktop {
+      font-size: 1.8rem;
+      padding-left: 7rem;
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    color: $font-color-white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-left: 1rem;
+    @include tablet {
+      font-size: 4rem;
+      padding-left: 2.5rem;
+      margin-top: 1rem;
+    }
+    @include desktop {
+      padding-left: 7rem;
+    }
+  }
+
+  @include desktop {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      padding: 1rem;
+    }
+  }
+
+  &__music-container {
+    margin: 0;
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__music-player {
+    height: 6rem;
+    width: 18rem;
+    padding-left: 1rem;
+    @include tablet {
+      padding-left: 2.5rem;
+      height: 8.8rem;
+      width: 26rem;
+    }
+    @include desktop {
+      padding-left: 7rem;
+    }
+  }
+}
+
+.ticket {
+  margin: 1rem;
+}
