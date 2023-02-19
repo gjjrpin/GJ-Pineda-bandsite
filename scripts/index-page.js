@@ -1,6 +1,6 @@
 // The square brackets signify an array. We are creating a const variable called "commentListObject".
 // and we are setting it to an array.
-// for each array item, we make an object. curly braces signify object.
+// for each array item, we make an object. The curly braces signify an object.
 // each object, has the property called name, date, and comment.
 // key:value pair
 // Date is the key, and "new Date(1676620800000)" is the value.
@@ -36,7 +36,7 @@ const commentListElement = document.querySelector("#comments");
 // We created a reusable function that requires a parameter called "comment".
 // "comment" is expected to be an object with the properties: Date, Venue, and Location.
 function displayComment(comment) {
-  // everytime this function is called, we are creating an element called "div, h2, p, etc."
+  // every time this function is called, we are creating an element called "div, h2, p, etc."
   const underlineElement = document.createElement("hr");
 
   const cardElement = document.createElement("div");
@@ -50,7 +50,7 @@ function displayComment(comment) {
   const commentElement = document.createElement("p");
   commentElement.innerText = comment.comment;
 
-  // appends the HTML elements into the cardElement (div).
+  // This appends the HTML elements into the cardElement (div).
   // for example: from this:  <div></div> ----> to this:  <div><h2>Date</h2></div>
   cardElement.appendChild(nameElement);
   cardElement.appendChild(dateElement);
@@ -65,12 +65,12 @@ function resetCommentsList() {
   const commentListReset = document.querySelector("#comments");
   // 2. empty the section.
   // the commentReset.innerHTML sets the section to an empty variable.
-  // For example: From: <section>..childrens..</section> ---> To: <section></setcion>
+  // For example: From: <section>..children..</section> ---> To: <section></section>
   commentListReset.innerHTML = "";
 }
 
 // The reason why we created a createCards function is to make it reusable
-// we want to sort it multiple times (everytime we add a new data)
+// we want to sort it multiple times (every time we add a new data)
 // reset <section> into empty.
 function createCards() {
   // Resets the commentsList
@@ -79,12 +79,12 @@ function createCards() {
 
   // I am sorting here.
   // commentListObject array is being sorted using "sort" function
-  // Eveytime you use something() <-- () is a function.
-  // (a,b) => b.date - a.date will sort from recent to least recent.
+  // every time you use xyz() <-- () is a function.
+  // "(a,b) => b.date - a.date" will sort from recent to least recent.
   commentListObject.sort((a, b) => b.date - a.date);
 
   // creating a forloop. at the start of the loop, we create a VARIABLE called "index" and setting it to 0.
-  // the loop keeps going if index is < cards.length. for everyloop, we increment index by 1 (index++)
+  // the loop keeps going if index is < cards.length. for every loop, we increment index by 1 (index++)
   for (let index = 0; index < commentListObject.length; index++) {
     // for every loop, we call the createCard function.
     // we call the createCard function created above.
@@ -95,7 +95,7 @@ function createCards() {
   }
 }
 
-// This is calling the createCards function in line 63
+// This is calling the createCards function in line 75
 createCards();
 
 // 1. Find the form HTML element.
@@ -112,13 +112,13 @@ formCommentElement.addEventListener("submit", (event) => {
 
   // 3. Access the name and comment
   // event is referring to the "mouse click"
-  // event.target is referring to the "form" What is the target of what you clicked? the form.
+  // event.target is referring to the "form". The target of what you clicked is the form.
   // event.target.name is referring to the HTML element with the name=name, or name=comment
   // event.target.name.value is referring to the user input/value (what you entered in the box).
   const nameInput = event.target.name.value;
   const commentInput = event.target.comment.value;
 
-  // THIS IS THE VALIDATION SECTION
+  // THIS IS THE VALIDATION SECTION with Ifs statements
 
   // "||" means "or"
   // "&&" means "and"
@@ -140,7 +140,7 @@ formCommentElement.addEventListener("submit", (event) => {
   //----------------------------------
 
   // 4. Access the date
-  // everytime there is an = sign, you are storing something into a VARIABLE.
+  // every time there is an = sign, you are storing something into a VARIABLE.
   const dateInput = Date.now();
 
   // 5. create an object out of them
@@ -161,7 +161,7 @@ formCommentElement.addEventListener("submit", (event) => {
   // the card parameter is (newComment) because we need to pass
   // the data (newComment line 94) to the createCard function above.
 
-  // This is calling the createCards function in line 63
+  // This is calling the createCards function in line 75
   // this makes createCards REUSABLE
   createCards();
 
