@@ -60,16 +60,18 @@ function createTable() {
   const headerElement1 = document.createElement("th"); // <th></th>
   const headerElement2 = document.createElement("th"); // <th></th>
   const headerElement3 = document.createElement("th"); // <th></th>
+  const headerElement4 = document.createElement("th"); // <th></th>
 
   // This Changes the innerText of each headers to Date, Venue, Location
   headerElement1.innerText = "Date"; // <th>Date</th>
   headerElement2.innerText = "Venue"; // <th>Venue</th>
   headerElement3.innerText = "Location"; // <th>Location</th>
 
-  // This adds the headers element to the row element
+  // This adds the headers element to the rowElement
   rowElement.appendChild(headerElement1); // <tr><th></th></tr>
   rowElement.appendChild(headerElement2); // <tr><th></th></tr>
   rowElement.appendChild(headerElement3); // <tr><th></th></tr>
+  rowElement.appendChild(headerElement4); // <tr><th></th></tr>
 
   // This adds the row to the table.
   tableElement.appendChild(rowElement); // <table><tr><th></th></tr></table>
@@ -110,10 +112,10 @@ function createTableRow(card) {
   const cardButtonElement = document.createElement("button");
   // The top becomes <button></button> -----> This <button>Buy Tickets</button>
   cardButtonElement.innerText = "Buy Tickets";
-  
+
   // This appends dateDataElement to rowDataElement
   // <tr></tr> -----> <tr><td>Mon Sept 06 2021</td></tr>
-    /* First it's this:
+  /* First it's this:
     <tr><td>Mon Sept 06 2021</td></tr> ---->
 
       Then it becomes this:
@@ -125,6 +127,7 @@ function createTableRow(card) {
   rowDataElement.appendChild(dateDataElement);
   rowDataElement.appendChild(venueDataElement);
   rowDataElement.appendChild(locationDataElement);
+  rowDataElement.appendChild(cardButtonElement);
 
   // This appends rowDataElement to ticketsTableElement.
   // This: <table id="ticketsTable"></table> ----> Becomes this: <table id="ticketsTable"><tr>...</tr></table>

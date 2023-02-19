@@ -50,7 +50,7 @@ function displayComment(comment) {
   const commentElement = document.createElement("p");
   commentElement.innerText = comment.comment;
 
-  // appends the HTML elements into the cardEelement (div).
+  // appends the HTML elements into the cardElement (div).
   // for example: from this:  <div></div> ----> to this:  <div><h2>Date</h2></div>
   cardElement.appendChild(nameElement);
   cardElement.appendChild(dateElement);
@@ -105,17 +105,43 @@ formCommentElement.addEventListener("submit", (event) => {
   // Prevents from refreshing the page.
   event.preventDefault();
 
+  // This will reset the errors.
+  // the "remove" function will clear the specified class in the parameter.
+  event.target.name.classList.remove("comment__error-state");
+  event.target.comment.classList.remove("comment__error-state");
+
   // 3. Access the name and comment
-  const nameInput = event.target.name.value;
-  const commentInput = event.target.comment.value;
   // event is referring to the "mouse click"
   // event.target is referring to the "form" What is the target of what you clicked? the form.
   // event.target.name is referring to the HTML element with the name=name, or name=comment
   // event.target.name.value is referring to the user input/value (what you entered in the box).
+  const nameInput = event.target.name.value;
+  const commentInput = event.target.comment.value;
+
+  // THIS IS THE VALIDATION SECTION
+
+  // "||" means "or"
+  // "&&" means "and"
+  if (nameInput === "" || commentInput === "") {
+    // both condition1 or condition2 needs to be true in order to execute this.
+    if (nameInput === "") {
+      event.target.name.classList.add("comment__error-state");
+    }
+    if (commentInput === "") {
+      event.target.comment.classList.add("comment__error-state");
+    }
+    // Put .error css class in the input
+    // returns ends the entire remaining function below.
+    // having the return here, ignores the rest of the function below IF the condition is met.
+    // if nameInput and commentInput is NOT empty, the rest of the function below will execute.
+    return;
+  }
+
+  //----------------------------------
 
   // 4. Access the date
-  const dateInput = Date.now();
   // everytime there is an = sign, you are storing something into a VARIABLE.
+  const dateInput = Date.now();
 
   // 5. create an object out of them
   const newComment = {
