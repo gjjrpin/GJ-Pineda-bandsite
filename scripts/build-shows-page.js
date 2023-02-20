@@ -63,75 +63,83 @@ function createTable() {
 // "card" is expected to be an object with the properties: Date, Venue, and Location.
 // "card" is a parameter/argument.
 function createTableRow(card) {
-  // everytime this function is called, we are creating an element called "tr, td"
+  // every time this function is called, we are creating an element called "tr, td"
   // This is an example of what it looks like: <table id="ticketsTable"></table>
   const ticketsTableElement = document.querySelector("#ticketsTable");
 
   const buttonElement = document.createElement("button");
-  buttonElement.innerText = "Button";
+  buttonElement.innerText = "Buy Tickets";
+  buttonElement.classList.add("ticket__button");
 
   // This creates a <tr></tr>
   const rowDataElement1 = document.createElement("tr");
   const rowDataElement2 = document.createElement("tr");
   const rowDataElement3 = document.createElement("tr");
-  rowDataElement3.classList.add("column");
+  rowDataElement3.classList.add("ticket__column");
 
   const rowDataElement4 = document.createElement("tr");
-  rowDataElement4.classList.add("column");
+  rowDataElement4.classList.add("ticket__column");
 
   const rowDataElement5 = document.createElement("tr");
-  rowDataElement5.classList.add("column");
+  rowDataElement5.classList.add("ticket__column");
 
   const rowDataElement6 = document.createElement("tr");
-  rowDataElement6.classList.add("column");
+  rowDataElement6.classList.add("ticket__column");
 
   const rowDataElement7 = document.createElement("tr");
-  rowDataElement7.classList.add("column");
+  rowDataElement7.classList.add("ticket__column");
 
- //--------------HEADER ELEMENT--------------------//
+  //--------------HEADER ELEMENT--------------------//
 
   const headerElement1 = document.createElement("th");
   headerElement1.innerText = "Date";
+  headerElement1.classList.add("ticket__title");
 
   const headerElement2 = document.createElement("th");
   headerElement2.innerText = "Venue";
-  headerElement2.classList.add("row");
+  headerElement2.classList.add("ticket__row");
 
   const headerElement3 = document.createElement("th");
   headerElement3.innerText = "Location";
-  headerElement3.classList.add("row");
+  headerElement3.classList.add("ticket__row");
 
   const headerElement4 = document.createElement("th");
   headerElement4.innerText = "Venue";
+  headerElement4.classList.add("ticket__title");
 
   const headerElement5 = document.createElement("th");
   headerElement5.innerText = "Location";
+  headerElement5.classList.add("ticket__title");
   //--------------HEADER ELEMENT--------------------//
   //--------------DATA ELEMENT--------------------//
 
   const dataElement1 = document.createElement("td");
   dataElement1.innerText = card.date;
+  dataElement1.classList.add("ticket__date");
 
   const dataElement2 = document.createElement("td");
   dataElement2.innerText = card.venue;
-  dataElement2.classList.add("row");
+  dataElement2.classList.add("ticket__row");
 
   const dataElement3 = document.createElement("td");
   dataElement3.innerText = card.location;
-  dataElement3.classList.add("row");
+  dataElement3.classList.add("ticket__row");
 
   const dataElement4 = document.createElement("td");
   dataElement4.appendChild(buttonElement);
-  dataElement4.classList.add("row");
+  dataElement4.classList.add("ticket__row");
 
   const dataElement5 = document.createElement("td");
   dataElement5.innerText = card.venue;
+  dataElement5.classList.add("ticket__content");
 
   const dataElement6 = document.createElement("td");
   dataElement6.innerText = card.location;
+  dataElement6.classList.add("ticket__content");
 
   const dataElement7 = document.createElement("td");
   dataElement7.appendChild(buttonElement);
+  dataElement7.classList.add("ticket__button-container");
 
   //--------------
 

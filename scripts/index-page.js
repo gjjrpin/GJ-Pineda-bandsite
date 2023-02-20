@@ -3,11 +3,11 @@
 // for each array item, we make an object. The curly braces signify an object.
 // each object, has the property called name, date, and comment.
 // key:value pair
-// Date is the key, and "new Date(1676620800000)" is the value.
+// Date is the key, and "new Date(1613548800000)" is the value.
 const commentListObject = [
   {
     name: "Connor Walton",
-    date: new Date(1676620800000),
+    date: new Date(1613548800000),
     comment:
       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
   },
@@ -179,7 +179,7 @@ formCommentElement.addEventListener("submit", (event) => {
   // the card parameter is (newComment) because we need to pass
   // the data (newComment line 94) to the createCard function above.
 
-  // This is calling the createCards function in line 75
+  // This is calling the createCards function in line 93
   // this makes createCards REUSABLE
   createCards();
 

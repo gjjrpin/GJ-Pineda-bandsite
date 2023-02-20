@@ -68,6 +68,7 @@ body {
 
   &__music-container {
     margin: 0;
+    width: 100%;
     @include desktop {
       display: flex;
       flex-direction: row;
@@ -89,34 +90,62 @@ body {
   }
 }
 
-.ticket {
-  margin: 1rem;
-}
 // <-------------HERO END----------------> //
 
 // <-------------SHOWS----------------> //
-.shows {
-  &__header {
-  }
-  &__date {
-  }
-  &__name {
-  }
-  &__location {
-  }
-  &__button {
-  }
+#ticketsTable {
+  width: 100%;
 }
 
-.column {
-  @include tablet {
-    display: none;
+.ticket {
+  margin: 1rem;
+  text-align: left;
+  &__column {
+    @include tablet {
+      display: none;
+    }
   }
-}
-.row {
-  display: none;
-  @include tablet {
-    display: table-cell;
+  &__row {
+    display: none;
+    @include tablet {
+      display: table-cell;
+    }
+  }
+  &__header {
+    margin: 1.8rem 0 0.75rem 0;
+  }
+  &__title {
+    color: $font-color-silver;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    padding-top: 0.8rem;
+  }
+  &__date {
+    font-size: 0.8rem;
+    color: $font-color-dark-grey;
+    font-weight: bold;
+    padding: 0.4rem 0 0.4rem 0;
+  }
+  &__content {
+    font-size: 0.8rem;
+    color: $font-color-dark-grey;
+    padding: 0.4rem 0 0.4rem 0;
+  }
+  &__button-container {
+    border-bottom: 0.1rem solid $bg-color-mercury;
+  }
+  &__button {
+    background-color: $bg-color-dark-grey;
+    color: $font-color-white;
+    font-family: "AvenirNext LT Pro";
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0 1rem 0;
+    width: 100%;
+    padding: 0.6rem;
+    text-transform: uppercase;
   }
 }
 

@@ -92,6 +92,7 @@ body {
 }
 .hero__music-container {
   margin: 0;
+  width: 100%;
 }
 @media only screen and (min-width: 1280px) {
   .hero__music-container {
@@ -118,21 +119,60 @@ body {
   }
 }
 
-.ticket {
-  margin: 1rem;
+#ticketsTable {
+  width: 100%;
 }
 
+.ticket {
+  margin: 1rem;
+  text-align: left;
+}
 @media only screen and (min-width: 768px) {
-  .column {
+  .ticket__column {
     display: none;
   }
 }
-
-.row {
+.ticket__row {
   display: none;
 }
 @media only screen and (min-width: 768px) {
-  .row {
+  .ticket__row {
     display: table-cell;
   }
+}
+.ticket__header {
+  margin: 1.8rem 0 0.75rem 0;
+}
+.ticket__title {
+  color: #afafaf;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  padding-top: 0.8rem;
+}
+.ticket__date {
+  font-size: 0.8rem;
+  color: #323232;
+  font-weight: bold;
+  padding: 0.4rem 0 0.4rem 0;
+}
+.ticket__content {
+  font-size: 0.8rem;
+  color: #323232;
+  padding: 0.4rem 0 0.4rem 0;
+}
+.ticket__button-container {
+  border-bottom: 0.1rem solid #e1e1e1;
+}
+.ticket__button {
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirNext LT Pro";
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0 1rem 0;
+  width: 100%;
+  padding: 0.6rem;
+  text-transform: uppercase;
 }/*# sourceMappingURL=shows.css.map */
