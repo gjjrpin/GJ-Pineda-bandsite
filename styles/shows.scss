@@ -95,4 +95,28 @@ body {
 // <-------------HERO END----------------> //
 
 // <-------------SHOWS----------------> //
+.shows {
+  .column {
+    @include tablet {
+      display: none;
+    }
+  }
+  .row {
+    display: none;
+    @include tablet {
+      display: table-cell;
+    }
+  }
+  &__header {
+  }
+  &__date {
+  }
+  &__name {
+  }
+  &__location {
+  }
+  &__button {
+  }
+}
+
 // <-------------SHOWS END----------------> //

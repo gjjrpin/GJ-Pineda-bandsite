@@ -37,27 +37,45 @@ const commentListElement = document.querySelector("#comments");
 // "comment" is expected to be an object with the properties: Date, Venue, and Location.
 function displayComment(comment) {
   // every time this function is called, we are creating an element called "div, h2, p, etc."
-  const underlineElement = document.createElement("hr");
+  const cardContainerElement = document.createElement("div");
+  // the classList.add("comment") adds a css class to the div.
+  // for example: <div class=comment></div>
+  cardContainerElement.classList.add("comment");
+
+  const cardPlaceHolderElement = document.createElement("img");
+  cardPlaceHolderElement.classList.add("comment__placeholder");
 
   const cardElement = document.createElement("div");
+  cardElement.classList.add("comment__card-container");
+
+  const nameDateContainer = document.createElement("div");
+  nameDateContainer.classList.add("comment__heading-container");
 
   const nameElement = document.createElement("h2");
   nameElement.innerText = comment.name;
+  nameElement.classList.add("comment__name");
 
   const dateElement = document.createElement("p");
   dateElement.innerText = `${comment.date.toLocaleDateString()}`;
+  dateElement.classList.add("comment__date");
 
   const commentElement = document.createElement("p");
   commentElement.innerText = comment.comment;
+  commentElement.classList.add("comment__statement");
 
   // This appends the HTML elements into the cardElement (div).
   // for example: from this:  <div></div> ----> to this:  <div><h2>Date</h2></div>
-  cardElement.appendChild(nameElement);
-  cardElement.appendChild(dateElement);
+  nameDateContainer.appendChild(nameElement);
+  nameDateContainer.appendChild(dateElement);
+
+  cardElement.appendChild(nameDateContainer);
   cardElement.appendChild(commentElement);
-  cardElement.appendChild(underlineElement);
-  // we add a child in the ticketsElement (this is the section ID = tickets).
-  commentListElement.appendChild(cardElement);
+
+  cardContainerElement.appendChild(cardPlaceHolderElement);
+  cardContainerElement.appendChild(cardElement);
+  // we add a child in the ticketsElement (this is the section ID = comments).
+  // commentListElement = <section id="comments"></section>
+  commentListElement.appendChild(cardContainerElement);
 }
 
 function resetCommentsList() {
@@ -107,8 +125,8 @@ formCommentElement.addEventListener("submit", (event) => {
 
   // This will reset the errors.
   // the "remove" function will clear the specified class in the parameter.
-  event.target.name.classList.remove("comment__error-state");
-  event.target.comment.classList.remove("comment__error-state");
+  event.target.name.classList.remove("form__error-state");
+  event.target.comment.classList.remove("form__error-state");
 
   // 3. Access the name and comment
   // event is referring to the "mouse click"
@@ -125,10 +143,10 @@ formCommentElement.addEventListener("submit", (event) => {
   if (nameInput === "" || commentInput === "") {
     // both condition1 or condition2 needs to be true in order to execute this.
     if (nameInput === "") {
-      event.target.name.classList.add("comment__error-state");
+      event.target.name.classList.add("form__error-state");
     }
     if (commentInput === "") {
-      event.target.comment.classList.add("comment__error-state");
+      event.target.comment.classList.add("form__error-state");
     }
     // Put .error css class in the input
     // returns ends the entire remaining function below.

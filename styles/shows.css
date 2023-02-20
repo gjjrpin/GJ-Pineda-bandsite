@@ -120,4 +120,18 @@ body {
 
 .ticket {
   margin: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .shows .column {
+    display: none;
+  }
+}
+.shows .row {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  .shows .row {
+    display: table-cell;
+  }
 }/*# sourceMappingURL=shows.css.map */

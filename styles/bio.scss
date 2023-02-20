@@ -34,7 +34,7 @@ body {
       padding-left: 2.5rem;
     }
     @include desktop {
-      padding-left: 7rem;
+      padding-left: 8rem;
     }
   }
 }
@@ -192,9 +192,9 @@ body {
 }
 // <-------------GALLERY END----------------> //
 
-// <-------------COMMENT----------------> //
+// <-------------FORM----------------> //
 
-.comment {
+.form {
   background-color: $bg-color-white;
   margin: 0 1rem 0 1rem;
   @include desktop {
@@ -203,7 +203,7 @@ body {
 
   &__row {
     display: flex;
-    border-bottom: 0.15rem solid $bg-color-mercury;
+    border-bottom: 0.1rem solid $bg-color-mercury;
     @include tablet {
       margin: 0 5rem 0 5rem;
     }
@@ -324,4 +324,67 @@ body {
   }
 }
 
+// <-------------FORM END----------------> //
+// <-------------COMMENT----------------> //
+#comments {
+  margin-bottom: 1rem;
+  @include tablet {
+    margin: 0 5rem 0 5rem;
+    margin-bottom: 2rem;
+  }
+  @include desktop {
+    margin: 0 18rem 0 18rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.comment {
+  display: flex;
+  border-bottom: 0.1rem solid $bg-color-mercury;
+  @include tablet {
+    margin: 1.5rem 0 1.5rem 0;
+  }
+  &__placeholder {
+    background-color: $bg-color-mercury;
+    border-radius: 50%;
+    margin: 0.5rem 1rem 0 0;
+    height: 2.25rem;
+    width: 2.25rem;
+    @include tablet {
+      height: 3.25rem;
+      width: 3.25rem;
+    }
+  }
+  &__heading-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__card-container {
+    // idk why this works
+    width: 20%; // restricted width so that the placeholder will have space to expand.
+    flex-grow: 1; // takes up the remaining space (purple lines)
+  }
+  &__name {
+    color: $font-color-dark-grey;
+    font-size: 0.85rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__date {
+    color: $font-color-silver;
+    font-size: 0.85rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__statement {
+    color: $font-color-dark-grey;
+    font-size: 0.8rem;
+    margin-top: 0;
+    @include tablet {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+}
 // <-------------COMMENT END----------------> //
