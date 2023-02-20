@@ -96,17 +96,6 @@ body {
 
 // <-------------SHOWS----------------> //
 .shows {
-  .column {
-    @include tablet {
-      display: none;
-    }
-  }
-  .row {
-    display: none;
-    @include tablet {
-      display: table-cell;
-    }
-  }
   &__header {
   }
   &__date {
@@ -116,6 +105,18 @@ body {
   &__location {
   }
   &__button {
+  }
+}
+
+.column {
+  @include tablet {
+    display: none;
+  }
+}
+.row {
+  display: none;
+  @include tablet {
+    display: table-cell;
   }
 }
 

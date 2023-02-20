@@ -53,29 +53,6 @@ function createTable() {
   const tableElement = document.createElement("table");
   tableElement.id = "ticketsTable";
 
-  // This creates a row element: <tr></tr>
-  const rowElement = document.createElement("tr");
-
-  // This creates 3 headers elements.
-  const headerElement1 = document.createElement("th"); // <th></th>
-  const headerElement2 = document.createElement("th"); // <th></th>
-  const headerElement3 = document.createElement("th"); // <th></th>
-  const headerElement4 = document.createElement("th"); // <th></th>
-
-  // This Changes the innerText of each headers to Date, Venue, Location
-  headerElement1.innerText = "Date"; // <th>Date</th>
-  headerElement2.innerText = "Venue"; // <th>Venue</th>
-  headerElement3.innerText = "Location"; // <th>Location</th>
-
-  // This adds the headers element to the rowElement
-  rowElement.appendChild(headerElement1); // <tr><th></th></tr>
-  rowElement.appendChild(headerElement2); // <tr><th></th></tr>
-  rowElement.appendChild(headerElement3); // <tr><th></th></tr>
-  rowElement.appendChild(headerElement4); // <tr><th></th></tr>
-
-  // This adds the row to the table.
-  tableElement.appendChild(rowElement); // <table><tr><th></th></tr></table>
-
   // This adds the entire table to the ticketsElement section
   ticketsElement.appendChild(tableElement); // <section><table><tr><th></th></tr></table></section>
 }
@@ -90,48 +67,98 @@ function createTableRow(card) {
   // This is an example of what it looks like: <table id="ticketsTable"></table>
   const ticketsTableElement = document.querySelector("#ticketsTable");
 
+  const buttonElement = document.createElement("button");
+  buttonElement.innerText = "Button";
+
   // This creates a <tr></tr>
-  const rowDataElement = document.createElement("tr");
+  const rowDataElement1 = document.createElement("tr");
+  const rowDataElement2 = document.createElement("tr");
+  const rowDataElement3 = document.createElement("tr");
+  rowDataElement3.classList.add("column");
 
-  // This creates a <td></td>
-  const dateDataElement = document.createElement("td");
-  // The top becomes this <td></td> -----> to this <td>Mon Sept 06 2021</td>
-  dateDataElement.innerText = card.date;
+  const rowDataElement4 = document.createElement("tr");
+  rowDataElement4.classList.add("column");
 
-  // This creates a <td></td>
-  const venueDataElement = document.createElement("td");
-  // The top becomes this <td></td> -----> to this <td>Ronald Lane</td>
-  venueDataElement.innerText = card.venue;
+  const rowDataElement5 = document.createElement("tr");
+  rowDataElement5.classList.add("column");
 
-  // This creates a <td></td>
-  const locationDataElement = document.createElement("td");
-  // The top becomes <td></td> -----> This <td>San Francisco, CA</td>
-  locationDataElement.innerText = card.location;
+  const rowDataElement6 = document.createElement("tr");
+  rowDataElement6.classList.add("column");
 
-  // This creates a <button></button>
-  const cardButtonElement = document.createElement("button");
-  // The top becomes <button></button> -----> This <button>Buy Tickets</button>
-  cardButtonElement.innerText = "Buy Tickets";
+  const rowDataElement7 = document.createElement("tr");
+  rowDataElement7.classList.add("column");
 
-  // This appends dateDataElement to rowDataElement
-  // <tr></tr> -----> <tr><td>Mon Sept 06 2021</td></tr>
-  /* First it's this:
-    <tr><td>Mon Sept 06 2021</td></tr> ---->
+ //--------------HEADER ELEMENT--------------------//
 
-      Then it becomes this:
-    <tr>
-      <td>Mon Sept 06 2021</td>
-      <td>Ronald Lane</td>
-    </tr>
-  */
-  rowDataElement.appendChild(dateDataElement);
-  rowDataElement.appendChild(venueDataElement);
-  rowDataElement.appendChild(locationDataElement);
-  rowDataElement.appendChild(cardButtonElement);
+  const headerElement1 = document.createElement("th");
+  headerElement1.innerText = "Date";
 
-  // This appends rowDataElement to ticketsTableElement.
-  // This: <table id="ticketsTable"></table> ----> Becomes this: <table id="ticketsTable"><tr>...</tr></table>
-  ticketsTableElement.appendChild(rowDataElement);
+  const headerElement2 = document.createElement("th");
+  headerElement2.innerText = "Venue";
+  headerElement2.classList.add("row");
+
+  const headerElement3 = document.createElement("th");
+  headerElement3.innerText = "Location";
+  headerElement3.classList.add("row");
+
+  const headerElement4 = document.createElement("th");
+  headerElement4.innerText = "Venue";
+
+  const headerElement5 = document.createElement("th");
+  headerElement5.innerText = "Location";
+  //--------------HEADER ELEMENT--------------------//
+  //--------------DATA ELEMENT--------------------//
+
+  const dataElement1 = document.createElement("td");
+  dataElement1.innerText = card.date;
+
+  const dataElement2 = document.createElement("td");
+  dataElement2.innerText = card.venue;
+  dataElement2.classList.add("row");
+
+  const dataElement3 = document.createElement("td");
+  dataElement3.innerText = card.location;
+  dataElement3.classList.add("row");
+
+  const dataElement4 = document.createElement("td");
+  dataElement4.appendChild(buttonElement);
+  dataElement4.classList.add("row");
+
+  const dataElement5 = document.createElement("td");
+  dataElement5.innerText = card.venue;
+
+  const dataElement6 = document.createElement("td");
+  dataElement6.innerText = card.location;
+
+  const dataElement7 = document.createElement("td");
+  dataElement7.appendChild(buttonElement);
+
+  //--------------
+
+  rowDataElement1.appendChild(headerElement1);
+  rowDataElement1.appendChild(headerElement2);
+  rowDataElement1.appendChild(headerElement3);
+
+  rowDataElement2.appendChild(dataElement1);
+  rowDataElement2.appendChild(dataElement2);
+  rowDataElement2.appendChild(dataElement3);
+  rowDataElement2.appendChild(dataElement4);
+
+  rowDataElement3.appendChild(headerElement4);
+  rowDataElement4.appendChild(dataElement5);
+
+  rowDataElement5.appendChild(headerElement5);
+  rowDataElement6.appendChild(dataElement6);
+
+  rowDataElement7.appendChild(dataElement7);
+
+  ticketsTableElement.appendChild(rowDataElement1);
+  ticketsTableElement.appendChild(rowDataElement2);
+  ticketsTableElement.appendChild(rowDataElement3);
+  ticketsTableElement.appendChild(rowDataElement4);
+  ticketsTableElement.appendChild(rowDataElement5);
+  ticketsTableElement.appendChild(rowDataElement6);
+  ticketsTableElement.appendChild(rowDataElement7);
 }
 
 // ------------------------------------------------------------------------------------------
