@@ -71,8 +71,13 @@ function createTableRow(card) {
   buttonElement.innerText = "Buy Tickets";
   buttonElement.classList.add("ticket__button");
 
+  const buttonElement2 = document.createElement("button");
+  buttonElement2.innerText = "Buy Tickets";
+  buttonElement2.classList.add("ticket__button");
+
   // This creates a <tr></tr>
   const rowDataElement1 = document.createElement("tr");
+
   const rowDataElement2 = document.createElement("tr");
   const rowDataElement3 = document.createElement("tr");
   rowDataElement3.classList.add("ticket__column");
@@ -98,10 +103,12 @@ function createTableRow(card) {
   const headerElement2 = document.createElement("th");
   headerElement2.innerText = "Venue";
   headerElement2.classList.add("ticket__row");
+  headerElement2.classList.add("ticket__title");
 
   const headerElement3 = document.createElement("th");
   headerElement3.innerText = "Location";
   headerElement3.classList.add("ticket__row");
+  headerElement3.classList.add("ticket__title");
 
   const headerElement4 = document.createElement("th");
   headerElement4.innerText = "Venue";
@@ -120,13 +127,15 @@ function createTableRow(card) {
   const dataElement2 = document.createElement("td");
   dataElement2.innerText = card.venue;
   dataElement2.classList.add("ticket__row");
+  dataElement2.classList.add("ticket__content");
 
   const dataElement3 = document.createElement("td");
   dataElement3.innerText = card.location;
   dataElement3.classList.add("ticket__row");
+  dataElement3.classList.add("ticket__content");
 
   const dataElement4 = document.createElement("td");
-  dataElement4.appendChild(buttonElement);
+  dataElement4.appendChild(buttonElement2);
   dataElement4.classList.add("ticket__row");
 
   const dataElement5 = document.createElement("td");
@@ -184,4 +193,30 @@ for (let index = 0; index < shows.length; index++) {
   // for example, shows[0] -----> shows[1] -----> shows[2] ...
   // this is how you access a single card in the shows array.
   createTableRow(shows[index]);
+}
+// 1. Find the table element and store it in a variable for later use
+const ticketsTableElement = document.querySelector("#ticketsTable");
+
+function resetAllTrTest() {
+  for (let index = 0; index < ticketsTableElement.rows.length; index++) {
+    const trTableElement = ticketsTableElement.rows[index];
+
+    // 3. for each tr, add an eventListener (click)
+    trTableElement.classList.remove("selected");
+  }
+}
+
+// 2. now we can loop through the table's <tr>
+for (let index = 0; index < ticketsTableElement.rows.length; index++) {
+  const trTableElement = ticketsTableElement.rows[index];
+
+  // 3. for each tr, add an eventListener (click)
+
+  trTableElement.addEventListener("click", (event) => {
+    event.preventDefault();
+    resetAllTrTest();
+    // 4. when clicked, add 'selected' css
+    trTableElement.classList.add("selected");
+    //alert("clicked");
+  });
 }

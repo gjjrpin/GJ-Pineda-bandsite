@@ -95,11 +95,41 @@ body {
 // <-------------SHOWS----------------> //
 #ticketsTable {
   width: 100%;
+  tr:not(:first-child) {
+    &:hover {
+      background-color: $bg-color-light-grey;
+    }
+    &.selected {
+      background-color: $bg-color-mercury;
+    }
+  }
+  @include tablet {
+    border-collapse: collapse;
+    td {
+      border-bottom: 0.1rem solid $bg-color-mercury;
+    }
+    tr {
+      &:not(:first-child) {
+        th {
+          display: none;
+        }
+      }
+    }
+  }
+  @include desktop {
+    width: 70%;
+  }
 }
 
 .ticket {
-  margin: 1rem;
+  padding: 2rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  @include desktop {
+    flex-direction: row;
+    padding: 2rem 9rem 2rem 9rem;
+  }
   &__column {
     @include tablet {
       display: none;
@@ -113,6 +143,11 @@ body {
   }
   &__header {
     margin: 1.8rem 0 0.75rem 0;
+    @include desktop {
+      width: 30%;
+      font-size: 2.5rem;
+      margin-top: 0;
+    }
   }
   &__title {
     color: $font-color-silver;
@@ -120,18 +155,28 @@ body {
     text-transform: uppercase;
     font-size: 0.65rem;
     padding-top: 0.8rem;
+    @include tablet {
+      font-size: 0.8rem;
+    }
   }
   &__date {
     font-size: 0.8rem;
     color: $font-color-dark-grey;
     font-weight: bold;
     padding: 0.4rem 0 0.4rem 0;
+    @include tablet {
+      font-size: 0.95rem;
+    }
   }
   &__content {
     font-size: 0.8rem;
     color: $font-color-dark-grey;
     padding: 0.4rem 0 0.4rem 0;
+    @include tablet {
+      font-size: 0.95rem;
+    }
   }
+
   &__button-container {
     border-bottom: 0.1rem solid $bg-color-mercury;
   }
