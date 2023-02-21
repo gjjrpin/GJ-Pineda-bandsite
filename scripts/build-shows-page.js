@@ -104,7 +104,7 @@ function createTableRow(card) {
   const rowDataElement7 = document.createElement("tr");
   rowDataElement7.classList.add("ticket__column");
 
-  //--------------HEADER ELEMENT--------------------//
+  //--------------HEADER ELEMENT---------------------//
 
   // This creates a <th></th>
   const headerElement1 = document.createElement("th");
