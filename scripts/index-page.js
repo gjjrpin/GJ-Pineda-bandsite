@@ -55,6 +55,7 @@ function displayComment(comment) {
   nameElement.innerText = comment.name;
   nameElement.classList.add("comment__name");
 
+  // This uses string interpolation to add the comment.date to HTML.
   const dateElement = document.createElement("p");
   dateElement.innerText = `${comment.date.toLocaleDateString()}`;
   dateElement.classList.add("comment__date");

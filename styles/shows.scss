@@ -122,10 +122,13 @@ body {
 }
 
 .ticket {
-  padding: 2rem;
+  padding: 1rem;
   text-align: left;
   display: flex;
   flex-direction: column;
+  @include tablet {
+    padding: 2rem;
+  }
   @include desktop {
     flex-direction: row;
     padding: 2rem 9rem 2rem 9rem;

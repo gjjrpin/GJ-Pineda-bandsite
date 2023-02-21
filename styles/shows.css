@@ -146,10 +146,15 @@ body {
 }
 
 .ticket {
-  padding: 2rem;
+  padding: 1rem;
   text-align: left;
   display: flex;
   flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
+  .ticket {
+    padding: 2rem;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .ticket {

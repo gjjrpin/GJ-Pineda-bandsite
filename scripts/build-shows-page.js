@@ -59,7 +59,7 @@ function createTable() {
 
 // -----------------------------------------
 
-// We created a reusable function which is "createTableRow" that requires a parameter called "card".
+// We created a reusable function which is called "createTableRow" that requires a parameter called "card".
 // "card" is expected to be an object with the properties: Date, Venue, and Location.
 // "card" is a parameter/argument.
 function createTableRow(card) {
@@ -67,13 +67,23 @@ function createTableRow(card) {
   // This is an example of what it looks like: <table id="ticketsTable"></table>
   const ticketsTableElement = document.querySelector("#ticketsTable");
 
+  // THIS ENTIRE BUTTON SECTION IS FOR THE BUTTON SECTION OF THE MOBILE
+
+  // This creates a "button" element. <button></button>
   const buttonElement = document.createElement("button");
+  // This puts the words "Buy tickets" inside the "button element". <button>Buy Tickets</button>
   buttonElement.innerText = "Buy Tickets";
+  // This adds a class to the "button" element. <button class="ticket__button">Buy Tickets </button>
   buttonElement.classList.add("ticket__button");
+
+  // THIS ENTIRE BUTTON SECTION IS FOR THE BUTTON SECTION OF TABLET/DESKTOP
 
   const buttonElement2 = document.createElement("button");
   buttonElement2.innerText = "Buy Tickets";
   buttonElement2.classList.add("ticket__button");
+
+  // Note: The reason for two button elements is because you cannot use "buttonElement" twice.
+  // therefore, I made a buttonElement and buttonElement2.
 
   // This creates a <tr></tr>
   const rowDataElement1 = document.createElement("tr");
@@ -96,6 +106,7 @@ function createTableRow(card) {
 
   //--------------HEADER ELEMENT--------------------//
 
+  // This creates a <th></th>
   const headerElement1 = document.createElement("th");
   headerElement1.innerText = "Date";
   headerElement1.classList.add("ticket__title");
@@ -120,8 +131,11 @@ function createTableRow(card) {
   //--------------HEADER ELEMENT--------------------//
   //--------------DATA ELEMENT--------------------//
 
+  // This creates a <td></td>
   const dataElement1 = document.createElement("td");
+  // This puts all the data in card inside td. <td>Mon Sept 06 2021<td>
   dataElement1.innerText = card.date;
+  // This adds css to the td. <td class="ticket__date">Mon Sept 06 2021</td>
   dataElement1.classList.add("ticket__date");
 
   const dataElement2 = document.createElement("td");
@@ -150,25 +164,37 @@ function createTableRow(card) {
   dataElement7.appendChild(buttonElement);
   dataElement7.classList.add("ticket__button-container");
 
-  //--------------
+  //--------------------------------------------------------//
 
+  // This puts rowDataElement1 inside headerElement1. <tr><th></th></tr>
   rowDataElement1.appendChild(headerElement1);
+  // This puts rowDataElement2 inside headerElement1. <tr><th></th></tr>
   rowDataElement1.appendChild(headerElement2);
+  // This puts rowDataElement3 inside headerElement1. <tr><th></th></tr>
   rowDataElement1.appendChild(headerElement3);
 
+  // This puts dataElement1 inside rowDataElement2. <tr><td></td></tr>
   rowDataElement2.appendChild(dataElement1);
+  // This puts dataElement2 inside rowDataElement2. <tr><td></td></tr>
   rowDataElement2.appendChild(dataElement2);
+  // This puts dataElement3 inside rowDataElement2. <tr><td></td></tr>
   rowDataElement2.appendChild(dataElement3);
+  // This puts dataElement4 inside rowDataElement2. <tr><td></td></tr>
   rowDataElement2.appendChild(dataElement4);
 
+  // This puts headerElement4 inside rowDataElement3. <tr><th></th></tr>
   rowDataElement3.appendChild(headerElement4);
+  // This puts dataElement5 inside rowDataElement4. <tr><td></td></tr>
   rowDataElement4.appendChild(dataElement5);
 
+  //  This puts headerElement5 inside rowDataElement5. <tr><th></th></tr>
   rowDataElement5.appendChild(headerElement5);
+  // This puts dataElement6 inside rowDataElement6. <tr><td></td></tr>
   rowDataElement6.appendChild(dataElement6);
-
+  // This puts dataElement7 inside rowDataElement7. <tr><td></td></tr>
   rowDataElement7.appendChild(dataElement7);
 
+  // This puts rowDataElement1 inside ticketsTableElement. <table><tr></tr></table>
   ticketsTableElement.appendChild(rowDataElement1);
   ticketsTableElement.appendChild(rowDataElement2);
   ticketsTableElement.appendChild(rowDataElement3);
@@ -194,29 +220,27 @@ for (let index = 0; index < shows.length; index++) {
   // this is how you access a single card in the shows array.
   createTableRow(shows[index]);
 }
-// 1. Find the table element and store it in a variable for later use
+// This is the table element and I am storing it in a variable to use later.
 const ticketsTableElement = document.querySelector("#ticketsTable");
 
 function resetAllTrTest() {
   for (let index = 0; index < ticketsTableElement.rows.length; index++) {
     const trTableElement = ticketsTableElement.rows[index];
 
-    // 3. for each tr, add an eventListener (click)
     trTableElement.classList.remove("selected");
   }
 }
 
-// 2. now we can loop through the table's <tr>
+// Now, we can loop through the table's <tr>
 for (let index = 0; index < ticketsTableElement.rows.length; index++) {
   const trTableElement = ticketsTableElement.rows[index];
 
-  // 3. for each tr, add an eventListener (click)
-
+  // This adds an eventlistener ("click") to every tr.
   trTableElement.addEventListener("click", (event) => {
     event.preventDefault();
     resetAllTrTest();
+
     // 4. when clicked, add 'selected' css
     trTableElement.classList.add("selected");
-    //alert("clicked");
   });
 }

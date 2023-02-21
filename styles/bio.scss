@@ -237,7 +237,6 @@ body {
     height: 2.25rem;
     width: 2.25rem;
     object-fit: cover;
-    // object-position: horizontal vertical;
     object-position: -5px 0;
 
     @include tablet {
@@ -359,9 +358,8 @@ body {
     justify-content: space-between;
   }
   &__card-container {
-    // idk why this works
-    width: 20%; // restricted width so that the placeholder will have space to expand.
-    flex-grow: 1; // takes up the remaining space (purple lines)
+    width: 20%;
+    flex-grow: 1;
   }
   &__name {
     color: $font-color-dark-grey;
