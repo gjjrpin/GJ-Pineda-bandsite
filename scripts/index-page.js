@@ -1,29 +1,66 @@
 // The square brackets signify an array. We are creating a const variable called "commentListObject".
 // and we are setting it to an array.
-// for each array item, we make an object. The curly braces signify an object.
-// each object, has the property called name, date, and comment.
-// key:value pair
-// Date is the key, and "new Date(1613548800000)" is the value.
-const commentListObject = [
-  {
-    name: "Connor Walton",
-    date: new Date(1613548800000),
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: new Date(1610179200000),
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: new Date(1608451200000),
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+let commentListObject = [];
+
+/* Goal: Display data from API
+0. Create a function that generates the API key and store it as a variable.
+1. Create a function to get the data from the API
+2. store the data into a variable.
+3. use the variable to display the data.*/
+
+// notes:CDN is a storage for JS code. It could also be used for CSS code. CDN = storage.
+// Axios is a library that helps us use URLs. URLs can also be APIs.
+
+// This is setting the api_key to a variable called "apiVariable". We use "let" because the API key always changes.
+// we are setting it to a blank string so it could be filled with the api_key we are setting in the apiKey function.
+let apiVariable = "";
+
+// We are using the library called "axios" to use the API.
+// The "get" is the HTTP METHOD.
+// HTTP METHOD:
+// -get
+// -post
+// -put
+// -delete
+// We are now creating a function to set the apiVariable to response.data.api_key.
+function apiKey() {
+  axios
+    // The response from the api comes from the link at the bottom.
+    // The link at the bottom is an api.
+    .get("https://project-1-api.herokuapp.com/register")
+    // "Then" is an example of a "promise".
+    // When the link above gives us a response, we do the function inside "then."
+    // When the link above finishes loading, THEEENNNN we do the following...
+    .then(function (response) {
+      // Here, we're getting the response, and storing it in a variable called "apiVariable", which is also above.
+      // the reason why its response.data.api_key is because the API key string is INSIDE api_key which is INSIDE data.
+      /*
+        data = {
+          api_key: "this-is-the-api-key"
+        }
+      */
+      apiVariable = response.data.api_key;
+      // we are calling getComments, which is below.
+      // because once we have the api keys, we cant to be able to get the comments using it.
+      getComments();
+    });
+}
+
+apiKey();
+
+// This is the same as above but instead of getting the api key, we are getting the data.
+// We are getting the data using the API link.
+function getComments() {
+  axios
+    .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiVariable}`)
+    .then(function (res) {
+      commentListObject = res.data;
+      // The createcards is here because it's used to refresh the HTML.
+      // After we get the data, we want to be able to create an HTML with it.
+      // This will display the comments in the html.
+      createCards();
+    });
+}
 
 // the reason why we store this in a variable is so we can access it later. "commentList" is a VARIABLE.
 // we are storing the HTML element with the ID "#comments" into ticketsElement VARIABLE.
@@ -35,6 +72,7 @@ const commentListElement = document.querySelector("#comments");
 
 // We created a reusable function that requires a parameter called "comment".
 // "comment" is expected to be an object with the properties: Date, Venue, and Location.
+// This function creates the HTML for a single comment.
 function displayComment(comment) {
   // every time this function is called, we are creating an element called "div, h2, p, etc."
   const cardContainerElement = document.createElement("div");
@@ -55,9 +93,15 @@ function displayComment(comment) {
   nameElement.innerText = comment.name;
   nameElement.classList.add("comment__name");
 
-  // This uses string interpolation to add the comment.date to HTML.
   const dateElement = document.createElement("p");
-  dateElement.innerText = `${comment.date.toLocaleDateString()}`;
+
+  // This uses string interpolation to add the comment.timestamp to HTML.
+  // The "timestamp" comes from the name "timestamp" in the array of the API.
+  // it was named "timestamp" instead of "date", which is why I had to change it.
+  // we also needed to convert this into a date object by doing "new Date (comment.timestamp)" because
+  // the timestamp is just numbers. We need to convert this number into a date, hence, new Date.
+  // lastly, toLocaleDateString formats the date.
+  dateElement.innerText = `${new Date(comment.timestamp).toLocaleDateString()}`;
   dateElement.classList.add("comment__date");
 
   const commentElement = document.createElement("p");
@@ -79,6 +123,7 @@ function displayComment(comment) {
   commentListElement.appendChild(cardContainerElement);
 }
 
+// This does 2 things:
 function resetCommentsList() {
   // 1. Select the <section> which is in id=comments.
   const commentListReset = document.querySelector("#comments");
@@ -90,8 +135,8 @@ function resetCommentsList() {
 
 // The reason why we created a createCards function is to make it reusable
 // we want to sort it multiple times (every time we add a new data)
-// reset <section> into empty.
 function createCards() {
+  // reset <section> into empty.
   // Resets the commentsList
   // this calls the resetCommentsList
   resetCommentsList();
@@ -100,7 +145,7 @@ function createCards() {
   // commentListObject array is being sorted using "sort" function
   // every time you use xyz() <-- () is a function.
   // "(a,b) => b.date - a.date" will sort from recent to least recent.
-  commentListObject.sort((a, b) => b.date - a.date);
+  commentListObject.sort((a, b) => b.timestamp - a.timestamp);
 
   // creating a forloop. at the start of the loop, we create a VARIABLE called "index" and setting it to 0.
   // the loop keeps going if index is < cards.length. for every loop, we increment index by 1 (index++)
@@ -109,17 +154,19 @@ function createCards() {
     // we call the createCard function created above.
     // the card parameter is (cards[index]) and we are accessing [index].
     // for example, cards[0] -----> cards[1] -----> cards[2] ...
-    // this is how you access a single card in the cards array.
+    // this is how you access a single card in the commenListObject array.
     displayComment(commentListObject[index]);
   }
 }
 
-// This is calling the createCards function in line 75
+// This is calling the createCards function.
+// Ctrl + click to find createCards.
 createCards();
 
 // 1. Find the form HTML element.
 const formCommentElement = document.querySelector("#formComment");
 // 2. Add functionality/event on it if you click submit.
+// The word "event" in the addEventListener, doesn't have to be event. it could be any other word. ex. "whatever"
 formCommentElement.addEventListener("submit", (event) => {
   // Prevents from refreshing the page.
   event.preventDefault();
@@ -141,9 +188,16 @@ formCommentElement.addEventListener("submit", (event) => {
 
   // "||" means "or"
   // "&&" means "and"
+  // Check if the user inputted BOTH name and comment.
   if (nameInput === "" || commentInput === "") {
-    // both condition1 or condition2 needs to be true in order to execute this.
+    // That means theres an error.
+
+    // Where exactly are the errors? Is it the name OR comment OR both?
     if (nameInput === "") {
+      // event is referring to the "mouse click"
+      // event.target is referring to the "form". The target of what you clicked is the form.
+      // event.target.name is referring to the HTML element with the name=name, or name=comment
+      // event.target.name.value is referring to the user input/value (what you entered in the box).
       event.target.name.classList.add("form__error-state");
     }
     if (commentInput === "") {
@@ -158,31 +212,29 @@ formCommentElement.addEventListener("submit", (event) => {
 
   //----------------------------------
 
-  // 4. Access the date
-  // every time there is an = sign, you are storing something into a VARIABLE.
-  const dateInput = Date.now();
-
-  // 5. create an object out of them
+  // This is what we are pulling from the user inputs.
+  // I took the nameInput and commentInput and stored it to newComment.
+  // I added the new object to the array/list of comments
   const newComment = {
     name: nameInput,
-    date: new Date(dateInput),
     comment: commentInput,
   };
-  // I took the nameInput, dateInput, and commentInput and stored it to newComment.
 
-  // 6. Add the new object to the array/list of comments
-  commentListObject.push(newComment);
-  // commentListObject is the original array of default comments at the very top.
-  // push adds it to the array, but at the bottom.
-  // newComment is the new name, date, comment that a user inputs.
-
-  // createCard calls the createCard function we created above. (line 38)
-  // the card parameter is (newComment) because we need to pass
-  // the data (newComment line 94) to the createCard function above.
-
-  // This is calling the createCards function in line 93
-  // this makes createCards REUSABLE
-  createCards();
+  // we are posting the user inputs into the API here:
+  // more specifically, the variable newComment.
+  axios
+    .post(
+      `https://project-1-api.herokuapp.com/comments?api_key=${apiVariable}`,
+      newComment
+    )
+    .then(function (result) {
+      // The api generates timestamp and id from the posted newComment variable
+      // and gives it back to us through result.data.
+      commentListObject.push(result.data);
+      // This re-renders the commentListObject array.
+      // It essentially refreshes the HTML.
+      createCards();
+    });
 
   // event.target is referring to the "form".
   // event.target.RESET, CLEARS THE ENTIRE FORM.
