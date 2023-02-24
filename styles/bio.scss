@@ -348,6 +348,12 @@ body {
     color: $font-color-white;
     border-radius: 0.25rem;
     border-style: none;
+    margin-right: 0.5rem;
+  }
+  &__like-container {
+    display: flex;
+    height: 10%;
+    align-items: center;
   }
 
   &__placeholder {

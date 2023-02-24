@@ -1,6 +1,6 @@
-// The square brackets signify an array. We are creating a const variable called "commentListObject".
+// We are creating a const variable called "commentListObject". We use "let" because the API key always changes.
 let commentListObject = [];
-// This is setting the api_key to a variable called "apiVariable". We use "let" because the API key always changes.
+// This is setting the api_key to a variable called "apiVariable".
 let apiVariable = "";
 
 // We are now creating a function to set the apiVariable to response.data.api_key.
@@ -22,6 +22,7 @@ function getComments() {
   axios
     .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiVariable}`)
     .then(function (res) {
+      // setting commentListObject to res.data
       commentListObject = res.data;
       // The createCards is here because it's used to refresh the HTML.
       createCards();
@@ -65,6 +66,10 @@ function displayComment(comment) {
   likeElement.innerText = "Like";
   likeElement.classList.add("comment__like-button");
   likeElement.id = "likeButton";
+
+  const likeButtonCountContainer = document.createElement("div");
+  likeButtonCountContainer.classList.add("comment__like-container");
+
   // This links to line 116
   likeElement.value = comment.id;
   const likeCount = document.createElement("p");
@@ -76,8 +81,9 @@ function displayComment(comment) {
 
   cardElement.appendChild(nameDateContainer);
   cardElement.appendChild(commentElement);
-  cardElement.appendChild(likeElement);
-  cardElement.appendChild(likeCount);
+  likeButtonCountContainer.appendChild(likeElement);
+  likeButtonCountContainer.appendChild(likeCount);
+  cardElement.appendChild(likeButtonCountContainer);
 
   cardContainerElement.appendChild(cardPlaceHolderElement);
   cardContainerElement.appendChild(cardElement);
@@ -109,7 +115,8 @@ function createCards() {
   buttonsAddEventListeners();
 }
 
-// This is the like button functionality
+// --------------This is the like button functionality--------------- //
+
 function buttonsAddEventListeners() {
   const buttonElements = document.querySelectorAll(".comment__like-button");
   for (let i = 0; i < buttonElements.length; i++) {
@@ -123,6 +130,7 @@ function buttonsAddEventListeners() {
           `https://project-1-api.herokuapp.com/comments/${id}/like?api_key=${apiVariable}`
         )
         .then(function (result) {
+          // single result of the updated item/comment.
           // Find the comment in the array with the specified ID.
           for (let f = 0; f < commentListObject.length; f++) {
             if (commentListObject[f].id === id) {
@@ -152,7 +160,7 @@ formCommentElement.addEventListener("submit", (event) => {
   const nameInput = event.target.name.value;
   const commentInput = event.target.comment.value;
 
-  // THIS IS THE VALIDATION SECTION
+  //------------------------THIS IS THE VALIDATION SECTION--------------------------------//
 
   // Check if the user inputted BOTH name and comment.
   if (nameInput === "" || commentInput === "") {

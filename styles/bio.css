@@ -427,6 +427,12 @@ body {
   color: #ffffff;
   border-radius: 0.25rem;
   border-style: none;
+  margin-right: 0.5rem;
+}
+.comment__like-container {
+  display: flex;
+  height: 10%;
+  align-items: center;
 }
 .comment__placeholder {
   background-color: #e1e1e1;
