@@ -50,6 +50,15 @@
   padding: 0;
   margin: 0;
 }
+.main-nav__link {
+  padding-bottom: 1rem;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .main-nav__link {
+    padding-bottom: 1.7rem;
+  }
+}
 .main-nav__item {
   width: 100%;
   padding-bottom: 1rem;
