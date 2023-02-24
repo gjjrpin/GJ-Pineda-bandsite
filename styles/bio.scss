@@ -342,6 +342,14 @@ body {
   @include tablet {
     margin: 1.5rem 0 1.5rem 0;
   }
+
+  &__like-button {
+    background-color: $font-color-dark-grey;
+    color: $font-color-white;
+    border-radius: 0.25rem;
+    border-style: none;
+  }
+
   &__placeholder {
     background-color: $bg-color-mercury;
     border-radius: 50%;
