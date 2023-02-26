@@ -35,12 +35,12 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .hero {
-    height: 34rem;
+    height: 30.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero {
-    height: 44rem;
+    height: 40rem;
   }
 }
 .hero__title {
@@ -255,17 +255,17 @@ body {
     margin: 0 9rem 0 9rem;
   }
 }
-.form__row {
+.form__content {
   display: flex;
   border-bottom: 0.1rem solid #e1e1e1;
 }
 @media only screen and (min-width: 768px) {
-  .form__row {
+  .form__content {
     margin: 0 5rem 0 5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .form__row {
+  .form__content {
     margin: 0 18rem 0 18rem;
   }
 }

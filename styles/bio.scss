@@ -18,10 +18,10 @@ body {
   align-items: center;
   height: 11.5rem;
   @include tablet {
-    height: 34rem;
+    height: 30.5rem;
   }
   @include desktop {
-    height: 44rem;
+    height: 40rem;
   }
 
   &__title {
@@ -201,7 +201,7 @@ body {
     margin: 0 9rem 0 9rem;
   }
 
-  &__row {
+  &__content {
     display: flex;
     border-bottom: 0.1rem solid $bg-color-mercury;
     @include tablet {

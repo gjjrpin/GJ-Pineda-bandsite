@@ -3,6 +3,9 @@ let commentListObject = [];
 // This is setting the api_key to a variable called "apiVariable".
 let apiVariable = "";
 
+// we are storing the HTML element with the ID "#comments" into ticketsElement VARIABLE.
+const commentListElement = document.querySelector("#comments");
+
 // We are now creating a function to set the apiVariable to response.data.api_key.
 function apiKey() {
   axios
@@ -15,8 +18,6 @@ function apiKey() {
     });
 }
 
-apiKey();
-
 // This is the same as above but instead of getting the api key, we are getting the data.
 function getComments() {
   axios
@@ -28,9 +29,6 @@ function getComments() {
       createCards();
     });
 }
-
-// we are storing the HTML element with the ID "#comments" into ticketsElement VARIABLE.
-const commentListElement = document.querySelector("#comments");
 
 // We created a reusable function that requires a parameter called "comment".
 function displayComment(comment) {
@@ -70,7 +68,6 @@ function displayComment(comment) {
   const likeButtonCountContainer = document.createElement("div");
   likeButtonCountContainer.classList.add("comment__like-container");
 
-  // This links to line 116
   likeElement.value = comment.id;
   const likeCount = document.createElement("p");
   likeCount.innerText = comment.likes;
@@ -104,7 +101,6 @@ function createCards() {
   // reset <section> into empty.
   resetCommentsList();
 
-  // I am sorting here.
   commentListObject.sort((a, b) => b.timestamp - a.timestamp);
 
   // creating a forloop. at the start of the loop, we create a VARIABLE called "index" and setting it to 0.
@@ -145,56 +141,61 @@ function buttonsAddEventListeners() {
   }
 }
 
-// 1. Find the form HTML element.
-const formCommentElement = document.querySelector("#formComment");
-// 2. Add functionality/event on it if you click submit.
-formCommentElement.addEventListener("submit", (event) => {
-  // Prevents from refreshing the page.
-  event.preventDefault();
+function formAddEventListeners() {
+  // 1. Find the form HTML element.
+  const formCommentElement = document.querySelector("#formComment");
+  // 2. Add functionality/event on it if you click submit.
+  formCommentElement.addEventListener("submit", (event) => {
+    // Prevents from refreshing the page.
+    event.preventDefault();
 
-  // This will reset the errors.
-  event.target.name.classList.remove("form__error-state");
-  event.target.comment.classList.remove("form__error-state");
+    // This will reset the errors.
+    event.target.name.classList.remove("form__error-state");
+    event.target.comment.classList.remove("form__error-state");
 
-  // 3. Access the name and comment
-  const nameInput = event.target.name.value;
-  const commentInput = event.target.comment.value;
+    // 3. Access the name and comment
+    const nameInput = event.target.name.value;
+    const commentInput = event.target.comment.value;
 
-  //------------------------THIS IS THE VALIDATION SECTION--------------------------------//
+    //------------------------THIS IS THE VALIDATION SECTION--------------------------------//
 
-  // Check if the user inputted BOTH name and comment.
-  if (nameInput === "" || commentInput === "") {
-    // That means theres an error.
+    // Check if the user inputted BOTH name and comment.
+    if (nameInput === "" || commentInput === "") {
+      // That means theres an error.
+      if (nameInput === "") {
+        // event.target.name.value is referring to the user input/value (what you entered in the box).
+        event.target.name.classList.add("form__error-state");
+      }
+      if (commentInput === "") {
+        event.target.comment.classList.add("form__error-state");
+      }
+      // if nameInput and commentInput is NOT empty, the rest of the function below will execute.
+    } else {
+      const newComment = {
+        name: nameInput,
+        comment: commentInput,
+      };
 
-    // Where exactly are the errors? Is it the name OR comment OR both?
-    if (nameInput === "") {
-      // event.target.name.value is referring to the user input/value (what you entered in the box).
-      event.target.name.classList.add("form__error-state");
+      // we are posting the user inputs into the API here.
+      axios
+        .post(
+          `https://project-1-api.herokuapp.com/comments?api_key=${apiVariable}`,
+          newComment
+        )
+        .then(function (result) {
+          // The api generates timestamp and id from the posted newComment variable
+          commentListObject.push(result.data);
+          // This re-renders the commentListObject array.
+          createCards();
+        });
+
+      // event.target.RESET, CLEARS THE ENTIRE FORM.
+      event.target.reset();
     }
-    if (commentInput === "") {
-      event.target.comment.classList.add("form__error-state");
-    }
-    // if nameInput and commentInput is NOT empty, the rest of the function below will execute.
-  } else {
-    const newComment = {
-      name: nameInput,
-      comment: commentInput,
-    };
+  });
+}
 
-    // we are posting the user inputs into the API here.
-    axios
-      .post(
-        `https://project-1-api.herokuapp.com/comments?api_key=${apiVariable}`,
-        newComment
-      )
-      .then(function (result) {
-        // The api generates timestamp and id from the posted newComment variable
-        commentListObject.push(result.data);
-        // This re-renders the commentListObject array.
-        createCards();
-      });
+// ------------------------FUNCTIONS--------------------------------------------
 
-    // event.target.RESET, CLEARS THE ENTIRE FORM.
-    event.target.reset();
-  }
-});
+apiKey();
+formAddEventListeners();

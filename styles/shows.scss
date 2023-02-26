@@ -18,10 +18,10 @@ body {
   flex-direction: column;
   height: 17rem;
   @include tablet {
-    height: 34rem;
+    height: 30.5rem;
   }
   @include desktop {
-    height: 44rem;
+    height: 40rem;
   }
 
   &__album {
@@ -32,7 +32,7 @@ body {
     @include tablet {
       padding-left: 2.5rem;
       margin-top: 3.7rem;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
     @include desktop {
       font-size: 1.8rem;
@@ -48,14 +48,14 @@ body {
     padding-left: 1rem;
     width: 70%;
     @include tablet {
-      font-size: 4rem;
+      font-size: 3.2rem;
       padding-left: 2.5rem;
       margin-top: 1rem;
-      width: 80%;
+      width: 70%;
     }
     @include desktop {
       padding-left: 7rem;
-      width: 40%;
+      width: 35%;
     }
   }
 
@@ -95,97 +95,109 @@ body {
 
 // <-------------HERO END----------------> //
 
-// <-------------SHOWS----------------> //
-#ticketsTable {
-  width: 100%;
-  tr:not(:first-child) {
-    &:hover {
-      background-color: $bg-color-light-grey;
-    }
-    &.selected {
-      background-color: $bg-color-mercury;
-    }
-  }
-  @include tablet {
-    border-collapse: collapse;
-    td {
-      border-bottom: 0.1rem solid $bg-color-mercury;
-    }
-    tr {
-      &:not(:first-child) {
-        th {
-          display: none;
-        }
-      }
-    }
-  }
-  @include desktop {
-    width: 70%;
-  }
-}
+// <-------------CONTENT----------------> //
 
-.ticket {
+#tickets {
   padding: 1rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
   @include tablet {
     padding: 2rem;
   }
   @include desktop {
-    flex-direction: row;
-    padding: 2rem 9rem 2rem 9rem;
+    display: flex;
+    padding: 3.5rem 9rem 2rem 9rem;
   }
-  &__column {
+}
+
+#content {
+  @include desktop {
+    flex-grow: 1;
+  }
+}
+
+.title {
+  @include tablet {
+    font-size: 2rem;
+    margin: 1rem 0 3rem 0;
+  }
+  @include desktop {
+    width: 25%;
+    margin: -0.5rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border-bottom: 0.1rem solid $bg-color-mercury;
+  margin: 0;
+  padding: 0;
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.4rem 0 0.4rem 0;
+  }
+
+  &__container {
+    @include tablet {
+      width: 25%;
+    }
+  }
+  &__default-container {
+    font-weight: bold;
+    display: none;
+    list-style-type: none;
+    @include tablet {
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    &--secondary {
+      font-weight: bold;
+      display: block;
+      color: $font-color-silver;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      padding-top: 0.7rem;
+    }
+  }
+
+  &__selected {
+    background-color: $bg-color-mercury;
+  }
+
+  &:not(.content__selected):hover {
+    background-color: $bg-color-light-grey;
+  }
+
+  &__card-header {
+    font-weight: bold;
+    display: block;
+    color: $font-color-silver;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    padding-top: 0.7rem;
+
     @include tablet {
       display: none;
     }
   }
-  &__row {
-    display: none;
-    @include tablet {
-      display: table-cell;
-    }
-  }
-  &__header {
-    margin: 1.8rem 0 0.75rem 0;
-    @include desktop {
-      width: 30%;
-      font-size: 2.5rem;
-      margin-top: 0;
-    }
-  }
-  &__title {
-    color: $font-color-silver;
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 0.65rem;
-    padding-top: 0.8rem;
-    @include tablet {
-      font-size: 0.8rem;
-    }
-  }
-  &__date {
-    font-size: 0.8rem;
-    color: $font-color-dark-grey;
-    font-weight: bold;
-    padding: 0.4rem 0 0.4rem 0;
-    @include tablet {
-      font-size: 0.95rem;
-    }
-  }
-  &__content {
+
+  &__card-data {
     font-size: 0.8rem;
     color: $font-color-dark-grey;
     padding: 0.4rem 0 0.4rem 0;
     @include tablet {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
   }
 
   &__button-container {
-    border-bottom: 0.1rem solid $bg-color-mercury;
+    float: right;
   }
+
   &__button {
     background-color: $bg-color-dark-grey;
     color: $font-color-white;
@@ -195,9 +207,13 @@ body {
     border-radius: 0.25rem;
     margin: 0.5rem 0 1rem 0;
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.7rem;
     text-transform: uppercase;
+    @include tablet {
+      width: 9.2rem;
+      float: right;
+    }
   }
 }
 
-// <-------------SHOWS END----------------> //
+// <-------------CONTENT END----------------> //
