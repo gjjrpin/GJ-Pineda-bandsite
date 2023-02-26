@@ -35,12 +35,12 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .hero {
-    height: 34rem;
+    height: 30.5rem;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero {
-    height: 44rem;
+    height: 40rem;
   }
 }
 .hero__album {
@@ -53,7 +53,7 @@ body {
   .hero__album {
     padding-left: 2.5rem;
     margin-top: 3.7rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -72,16 +72,16 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .hero__title {
-    font-size: 4rem;
+    font-size: 3.2rem;
     padding-left: 2.5rem;
     margin-top: 1rem;
-    width: 80%;
+    width: 70%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero__title {
     padding-left: 7rem;
-    width: 40%;
+    width: 35%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -122,109 +122,115 @@ body {
   }
 }
 
-#ticketsTable {
-  width: 100%;
-}
-#ticketsTable tr:not(:first-child):hover {
-  background-color: #fafafa;
-}
-#ticketsTable tr:not(:first-child).selected {
-  background-color: #e1e1e1;
-}
-@media only screen and (min-width: 768px) {
-  #ticketsTable {
-    border-collapse: collapse;
-  }
-  #ticketsTable td {
-    border-bottom: 0.1rem solid #e1e1e1;
-  }
-  #ticketsTable tr:not(:first-child) th {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1280px) {
-  #ticketsTable {
-    width: 70%;
-  }
-}
-
-.ticket {
+#tickets {
   padding: 1rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
 }
 @media only screen and (min-width: 768px) {
-  .ticket {
+  #tickets {
     padding: 2rem;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .ticket {
-    flex-direction: row;
-    padding: 2rem 9rem 2rem 9rem;
+  #tickets {
+    display: flex;
+    padding: 3.5rem 9rem 2rem 9rem;
   }
 }
+
+@media only screen and (min-width: 1280px) {
+  #content {
+    flex-grow: 1;
+  }
+}
+
 @media only screen and (min-width: 768px) {
-  .ticket__column {
-    display: none;
+  .title {
+    font-size: 2rem;
+    margin: 1rem 0 3rem 0;
   }
-}
-.ticket__row {
-  display: none;
-}
-@media only screen and (min-width: 768px) {
-  .ticket__row {
-    display: table-cell;
-  }
-}
-.ticket__header {
-  margin: 1.8rem 0 0.75rem 0;
 }
 @media only screen and (min-width: 1280px) {
-  .ticket__header {
-    width: 30%;
-    font-size: 2.5rem;
-    margin-top: 0;
+  .title {
+    width: 25%;
+    margin: -0.5rem;
   }
 }
-.ticket__title {
+
+.content {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border-bottom: 0.1rem solid #e1e1e1;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.4rem 0 0.4rem 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .content__container {
+    width: 25%;
+  }
+}
+.content__default-container {
+  font-weight: bold;
+  display: none;
+  list-style-type: none;
+}
+@media only screen and (min-width: 768px) {
+  .content__default-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+}
+.content__default-container--secondary {
+  font-weight: bold;
+  display: block;
   color: #afafaf;
   font-weight: normal;
   text-transform: uppercase;
-  font-size: 0.65rem;
-  padding-top: 0.8rem;
+  font-size: 0.85rem;
+  padding-top: 0.7rem;
 }
-@media only screen and (min-width: 768px) {
-  .ticket__title {
-    font-size: 0.8rem;
-  }
+.content__selected {
+  background-color: #e1e1e1;
 }
-.ticket__date {
-  font-size: 0.8rem;
-  color: #323232;
+.content:not(.content__selected):hover {
+  background-color: #fafafa;
+}
+.content__card-header {
   font-weight: bold;
-  padding: 0.4rem 0 0.4rem 0;
+  display: block;
+  color: #afafaf;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  padding-top: 0.7rem;
 }
 @media only screen and (min-width: 768px) {
-  .ticket__date {
-    font-size: 0.95rem;
+  .content__card-header {
+    display: none;
   }
 }
-.ticket__content {
+.content__card-data {
   font-size: 0.8rem;
   color: #323232;
   padding: 0.4rem 0 0.4rem 0;
 }
 @media only screen and (min-width: 768px) {
-  .ticket__content {
-    font-size: 0.95rem;
+  .content__card-data {
+    font-size: 0.9rem;
   }
 }
-.ticket__button-container {
-  border-bottom: 0.1rem solid #e1e1e1;
+.content__button-container {
+  float: right;
 }
-.ticket__button {
+.content__button {
   background-color: #323232;
   color: #ffffff;
   font-family: "AvenirNext LT Pro";
@@ -233,6 +239,12 @@ body {
   border-radius: 0.25rem;
   margin: 0.5rem 0 1rem 0;
   width: 100%;
-  padding: 0.6rem;
+  padding: 0.7rem;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 768px) {
+  .content__button {
+    width: 9.2rem;
+    float: right;
+  }
 }/*# sourceMappingURL=shows.css.map */
